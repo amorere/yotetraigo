@@ -17,6 +17,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_153912) do
   create_table "applications", force: :cascade do |t|
     t.string "confirmation_status"
     t.string "price"
+    t.string "pickup_point"
+    t.string "drop_point"
+    t.datetime "pickup_datetime"
     t.bigint "user_id", null: false
     t.bigint "car_id", null: false
     t.datetime "created_at", null: false
@@ -26,9 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_153912) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.string "pickup_point"
-    t.string "drop_point"
-    t.datetime "pickup_datetime"
     t.string "status"
     t.bigint "user_id", null: false
     t.bigint "car_id", null: false
