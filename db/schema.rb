@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_145451) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_153912) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_145451) do
     t.index ["user_id"], name: "index_applications_on_user_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "pickup_point"
+    t.string "drop_point"
+    t.datetime "pickup_datetime"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.bigint "car_id", null: false
+    t.bigint "review_id", null: false
+    t.bigint "application_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["application_id"], name: "index_bookings_on_application_id"
+    t.index ["car_id"], name: "index_bookings_on_car_id"
+    t.index ["review_id"], name: "index_bookings_on_review_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "brand"
     t.string "model"
@@ -36,21 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_145451) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cars_on_user_id"
-  end
-
-  create_table "evaluations", force: :cascade do |t|
-    t.string "pickup_point"
-    t.string "drop_point"
-    t.datetime "pick_up_datetime"
-    t.string "status"
-    t.bigint "user_id", null: false
-    t.bigint "car_id", null: false
-    t.bigint "application_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_evaluations_on_application_id"
-    t.index ["car_id"], name: "index_evaluations_on_car_id"
-    t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -86,9 +88,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_145451) do
 
   add_foreign_key "applications", "cars"
   add_foreign_key "applications", "users"
+  add_foreign_key "bookings", "applications"
+  add_foreign_key "bookings", "cars"
+  add_foreign_key "bookings", "reviews"
+  add_foreign_key "bookings", "users"
   add_foreign_key "cars", "users"
-  add_foreign_key "evaluations", "applications"
-  add_foreign_key "evaluations", "cars"
-  add_foreign_key "evaluations", "users"
   add_foreign_key "reviews", "users"
 end
