@@ -19,7 +19,7 @@ class ApplicationsController < ApplicationController
     @app = Application.new(app_params)
     @app.user_id = current_user.id
     if @app.save
-      redirect_to cars_path
+      # redirect_to cars_path
     else
       render :new, status: :unprocessable_entity
     end
