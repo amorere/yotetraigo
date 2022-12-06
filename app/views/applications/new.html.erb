@@ -1,0 +1,13 @@
+<div class='container'>
+  <h1>Agrega tu evento</h1>
+  <p>Completa el siguiente formulario.</p>
+  <%= simple_form_for [@car, @app] do |f| %>
+    <%= f.input :price %>
+    <%= f.input :pickup_point %>
+    <%= f.input :drop_point %>
+    <%= f.input :pickup_datetime %>
+    <%= f.input :confirmation_status, as: :hidden %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
