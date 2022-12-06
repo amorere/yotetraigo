@@ -2,7 +2,7 @@
   <div class="container">
     <h1>RENT A CAR <strong>alquilá</strong> al <strong>mejor precio</strong>!</h1>
     <p>Donde quieras y cuando quieras, tene un auto a tu alcance.</p>
-    <%= link_to "Alquilar", cars_path, class: "btn btn-primary" %>
+    <%= link_to "Buscar servicio", miautodeviaje_path(), class: "btn btn-primary" %>
     <%= link_to "Subir tu auto", new_car_path, class: "btn btn-primary" %>
   </div>
 </div>
@@ -12,7 +12,6 @@
       <div class="col-md-4 col-sm-12">
         <%= link_to car_path(car) do %>
         <div class="card my-4">
-          <div class="card-category1" style="background-image: url(<%= url_for(car.photos.first) %>);">
             <div class="mt-5 pt-5 text-center">
               <%= car.model %>
             </div>

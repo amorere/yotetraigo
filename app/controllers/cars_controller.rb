@@ -17,6 +17,12 @@ class CarsController < ApplicationController
     @misautos = current_user.cars
   end
 
+
+  def miautodeviaje
+    @misautos = current_user.cars
+  end
+
+
   def new
     @car = Car.new
   end
@@ -25,7 +31,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user_id = current_user.id
     if @car.save
-      redirect_to cars_path
+      redirect_to  misautos_path
     else
       render :new, status: :unprocessable_entity
     end
