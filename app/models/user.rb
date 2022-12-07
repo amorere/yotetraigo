@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :cars
   has_many :bookings
   has_many :reviews
+  has_one_attached :photo
   # faltan las validaciones
 end
