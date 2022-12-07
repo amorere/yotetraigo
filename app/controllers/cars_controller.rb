@@ -39,7 +39,7 @@ class CarsController < ApplicationController
 
   def update
     @car.update(car_params)
-    redirect_to car_path(@car)
+    redirect_to misautos_path
   end
 
   def destroy

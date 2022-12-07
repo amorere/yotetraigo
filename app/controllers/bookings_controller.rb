@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking.car_id = @car.id
     @booking.status = "Pendiente"
     @booking.application_id = params[:app_id]
+    raise
     if @booking.save
       redirect_to bookings_path
     else
