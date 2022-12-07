@@ -9,11 +9,17 @@
         <p>Drop point: <%= app.drop_point %>
         <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
         <p>Precio: <%= app.price %></p>
+        <p>Estado: <%= app.confirmation_status %></p>
+
       </div>
       <div>
         <%= link_to "Editar Solicitud de viaje",   edit_application_path(app), class: "btn btn-gradient" %>
         <p></p>
         <%= button_to "Eliminar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
+        <p></p>
+        <% if app.confirmation_status == "Contraoferta" %>
+          <%= button_to "Aceptar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
+        <% end %>
       </div>
     </div>
   </div>
