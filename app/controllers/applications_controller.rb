@@ -1,11 +1,20 @@
 class ApplicationsController < ApplicationController
-  before_action :set_app, only: %i[show update destroy edit]
+  before_action :set_app, only: %i[show update destroy edit offer newoffer]
 
   def index
     @apps = Application.all
   end
 
   def show
+  end
+
+  def offer
+  end
+
+  def newoffer
+    @app.confirmation_status = "Contraoferta"
+    @app.update(app_params)
+    redirect_to misapp_path
   end
 
   def edit

@@ -10,6 +10,10 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def misbook
+    @misbook = current_user.bookings
+  end
+
   def create
     @car = Car.find(params[:car_id])
     @booking = Booking.new
@@ -18,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.status = "Pendiente"
     @booking.application_id = params[:app_id]
     if @booking.save
-      redirect_to bookings_path
+      redirect_to misbook_path
     else
       render :new, status: :unprocessable_entity
     end

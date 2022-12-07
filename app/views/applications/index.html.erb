@@ -10,8 +10,8 @@
           <p>Precio: <%= app.price %></p>
         </div>
         <div class= "pe-5 ms-auto">
-          <%= link_to "Aceptar viaje",  car_bookings_path(app.car_id, app_id: app.id), class: "btn btn-gradient", data: { turbo_method: "post" } %>
-          <%= link_to "Ofrecer mis servicios por otro precio", new_car_booking_path(app), class: "btn btn-gradient" %>
+          <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient", data: { turbo_method: "post" } %>
+          <%= link_to "Ofrecer mis servicios por otro precio", offer_path(app), class: "btn btn-gradient" %>
         </div>
     </div>
   <% end %>

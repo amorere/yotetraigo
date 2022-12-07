@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/misautos', to: 'cars#misautos'
   get '/miautodeviaje', to: 'cars#miautodeviaje'
   get '/misapp', to: 'applications#misapp'
+  get '/misbook', to: 'bookings#misbook'
+  get '/applications/:id/offer', to: 'applications#offer', as: :offer
+  patch '/applications/:id', to: 'applications#newoffer'
 
   resources :cars do
     resources :bookings, only: %i[new create]
