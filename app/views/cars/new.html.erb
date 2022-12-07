@@ -1,0 +1,14 @@
+<div class='container'>
+  <h1>Agrega tu auto</h1>
+  <p>Completa el siguiente formulario.</p>
+  <%= simple_form_for(@car) do |f| %>
+    <%= f.input :model %>
+    <%= f.input :brand %>
+    <%= f.input :plate %>
+    <%= f.input :color %>
+    <%= f.input :transmission %>
+    <%= f.input :insurance_other_drivers %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

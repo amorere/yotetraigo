@@ -12,14 +12,17 @@ class ApplicationsController < ApplicationController
   end
 
   def new
+    @car = Car.find(params[:car_id])
     @app = Application.new
   end
 
   def create
+    @car = Car.find(params[:car_id])
     @app = Application.new(app_params)
     @app.user_id = current_user.id
+    raise
     if @app.save
-      redirect_to cars_path
+      # redirect_to cars_path
     else
       render :new, status: :unprocessable_entity
     end

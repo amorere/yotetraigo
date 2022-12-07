@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Escoge con que auto quieres realizar tu viaje</h1>
+<% @misautos.each do |car| %>
+   <div class= 'container'>
+  <div class="card-product my-4">
+    <div>
+      </div>
+      <div class="card-product-infos">
+        <h2>Model: <%= car.model %></h2>
+        <p>Brand: <%= car.brand %>
+        <p>Color: <%= car.color %></p>
+        <p>Transmission: <%= car.transmission %></p>
+        <p>Seguro para terceros: <%= car.insurance_other_drivers %></p>
+      </div>
+      <div>
+        <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-gradient" %>
+        <p></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
