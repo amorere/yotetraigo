@@ -1,0 +1,18 @@
+<div class="container mt-3">
+    <h2>Todos los viajes</h2>
+  <% @apps.each do |app| %>
+     <div class="card-product my-4 justify-content-start">
+
+        <div class="card-product-infos text-left ps-5">
+          <p>Pickup point: <%= app.pickup_point %></p>
+          <p>Drop point: <%= app.drop_point %>
+          <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
+          <p>Precio: <%= app.price %></p>
+        </div>
+        <div class= "pe-5 ms-auto">
+          <%= link_to "Aceptar viaje",  car_bookings_path(app.car_id, app_id: app.id), class: "btn btn-gradient", data: { turbo_method: "post" } %>
+          <%= link_to "Ofrecer mis servicios por otro precio", new_car_booking_path(app), class: "btn btn-gradient" %>
+        </div>
+    </div>
+  <% end %>
+</div>

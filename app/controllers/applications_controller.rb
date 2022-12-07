@@ -2,7 +2,7 @@ class ApplicationsController < ApplicationController
   before_action :set_app, only: %i[show update destroy edit]
 
   def index
-    @app = Application.all
+    @apps = Application.all
   end
 
   def show
@@ -25,6 +25,7 @@ class ApplicationsController < ApplicationController
     @app = Application.new(app_params)
     @app.user_id = current_user.id
     @app.car_id = @car.id
+    @app.confirmation_status = "Abierto"
     if @app.save
       redirect_to misapp_path
     else
