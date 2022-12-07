@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/misautos', to: 'cars#misautos'
   get '/miautodeviaje', to: 'cars#miautodeviaje'
+  get '/misapp', to: 'applications#misapp'
 
   resources :cars do
     resources :bookings, only: %i[new create]

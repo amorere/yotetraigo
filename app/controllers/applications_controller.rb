@@ -11,6 +11,10 @@ class ApplicationsController < ApplicationController
   def edit
   end
 
+  def misapp
+    @misapp = current_user.applications
+  end
+
   def new
     @car = Car.find(params[:car_id])
     @app = Application.new
@@ -20,9 +24,9 @@ class ApplicationsController < ApplicationController
     @car = Car.find(params[:car_id])
     @app = Application.new(app_params)
     @app.user_id = current_user.id
-    raise
+    @app.car_id = @car.id
     if @app.save
-      # redirect_to cars_path
+      redirect_to misapp_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,12 +34,12 @@ class ApplicationsController < ApplicationController
 
   def update
     @app.update(app_params)
-    redirect_to app_path(@app)
+    redirect_to misapp_path()
   end
 
   def destroy
     @app.destroy
-    redirect_to misautos_path, status: :see_other
+    redirect_to misapp_path, status: :see_other
   end
 
   private
@@ -45,6 +49,6 @@ class ApplicationsController < ApplicationController
   end
 
   def app_params
-    params.require(:application).permit(:pick_point, :drop_point, :pickup_datetime, :confirmation_status, :price)
+    params.require(:application).permit(:pickup_point, :drop_point, :pickup_datetime, :confirmation_status, :price)
   end
 end

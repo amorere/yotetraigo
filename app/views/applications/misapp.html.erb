@@ -1,0 +1,22 @@
+<div class="container">
+<% @misapp.each do |app| %>
+   <div class= 'container'>
+  <div class="card-product my-4">
+    <div>
+      </div>
+      <div class="card-product-infos">
+        <p>Pickup point: <%= app.pickup_point %></p>
+        <p>Drop point: <%= app.drop_point %>
+        <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
+        <p>Precio: <%= app.price %></p>
+      </div>
+      <div>
+        <%= link_to "Editar Solicitud de viaje",   edit_application_path(app), class: "btn btn-gradient" %>
+        <p></p>
+        <%= button_to "Eliminar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
