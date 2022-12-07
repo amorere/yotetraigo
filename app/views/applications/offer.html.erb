@@ -1,0 +1,9 @@
+<div class='container'>
+  <h1>Enviale tu oferta al usuarui</h1>
+  <p> Elige un precio por el cual estarias dispuesto a realizar el trabajo</p>
+  <%= simple_form_for [@car, @app] do |f| %>
+    <%= f.input :price %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

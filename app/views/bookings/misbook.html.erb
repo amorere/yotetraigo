@@ -1,0 +1,24 @@
+<div class="container">
+<% @misbook.each do |book| %>
+   <div class= 'container'>
+  <div class="card-product my-4">
+    <div>
+      </div>
+      <div class="card-product-infos">
+        <p>Pickup point: <%= book.application.pickup_point %></p>
+        <p>Drop point: <%= book.application.drop_point %>
+        <p>Dia y hora de recogida: <%= book.application.pickup_datetime %></p>
+        <p>Precio: <%= book.application.price %></p>
+        <p>Status: <%= book.status %></p>
+
+      </div>
+      <div>
+        <%= link_to "Editar Solicitud de viaje",    edit_booking_path(book), class: "btn btn-gradient" %>
+        <p></p>
+        <%= button_to "Eliminar Solicitud", book, method: :delete, class: "btn btn-gradient" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
