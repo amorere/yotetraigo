@@ -1,25 +1,35 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(&quot;//images.hertz.com/content/Intl/1920x900_Hero_Banner/hero_summer_eucorp.jpg&quot;);">
-  <div class="container">
-    <h1>RENT A CAR <strong>alquilá</strong> al <strong>mejor precio</strong>!</h1>
-    <p>Donde quieras y cuando quieras, tene un auto a tu alcance.</p>
-    <%= link_to "Buscar servicio", miautodeviaje_path(), class: "btn btn-primary" %>
-    <%= link_to "Subir tu auto", new_car_path, class: "btn btn-primary" %>
-  </div>
-</div>
-<div class="container">
- <div class="row">
-    <% @cars.each do |car| %>
-      <div class="col-md-4 col-sm-12">
-        <%= link_to car_path(car) do %>
-        <div class="card my-4">
-            <div class="mt-5 pt-5 text-center">
-              <%= car.model %>
-            </div>
-          </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi pagina de prueba</title>
+  </head>
+
+  <body>
+     <div class="banner">
+        <div class="container">
+          <h1>Cool Buddy</h1>
+          <h2><strong>Volve seguro</strong> nosotros <strong>manejamos.</strong></h2>
+          <p>Donde quieras y cuando quieras, tene un Buddy a tu alcance.</p>
+          <%= link_to "Quiero ser Usuario", miautodeviaje_path(), class: "btn btn-primary" %>
+          <%= link_to "Quiero ser Conductor", new_car_path, class: "btn btn-primary" %>
         </div>
-        <% end %>
+     </div>
+
+      <div class="container">
+          <div class="row">
+              <% @cars.each do |car| %>
+                <div class="col-md-4 col-sm-12">
+                    <%= link_to car_path(car) do %>
+                      <div class="card my-4">
+                          <div class="mt-5 pt-5 text-center">
+                             <%= car.model %>
+                          </div>
+                      </div>
+                    <% end %>
+                 </div>
+              <% end %>
+            </div>
       </div>
-     <%# <%= image_tag car.photos.first %>
-    <% end %>
- </div>
-</div>
+  </body>
+</html>
