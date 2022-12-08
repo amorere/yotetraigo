@@ -1,27 +1,67 @@
-<h2>Sign up</h2>
+<div class= "container">
+  <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
-      data: {turbo: false}) do |f| %>
-  <%= f.error_notification %>
+  <div class="container" data-controller= "display-driver-fields" >
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+          data: {turbo: false}) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %> 
-    <%= f.input :photo, as: :file %>                     
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }, class: "form-control", placeholder: "Escrite tu correo", label: false %>
+        <div class="row">
+          <div class="col">
+            <%= f.input :first_name, class: "form-control", placeholder: "Escrite tu nombre", label: false %>
+          </div>
+          <div class="col md-6">
+            <%= f.input :last_name, class: "form-control", placeholder: "Escrite tu apellido", label: false %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <%= f.input :dni, class: "form-control", placeholder: "Escrite tu dni", label: false %>
+          </div>
+          <div class="col md-6">
+            <%= f.input :phone_number, class: "form-control", placeholder: "Escrite tu numero de telefono", label: false %>
+          </div>
+        </div>
+        <%= f.input :date_of_birth, as: :date, html5: true %>
+        <%= f.input :is_driver, input_html:{data: {action: "change->display-driver-fields#toggleDisplay"}} %>
+        <div class= "d-none" data-display-driver-fields-target="driver">
+        <div class="row">
+          <div class="col">
+            <%= f.input :driver_license_dni %>
+          </div>
+          <div class="col">
+            <%= f.input :driver_license_expiry, as: :date, html5: true %>
+          </div>
+        </div>
+        <%= f.input :insurance %>
+        <%= f.input :criminal_record %>
+        </div>
+      <div class="form-inputs">
+        <div class="row">
+          <div class="col">
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+          <div class="col">
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+            <%= f.input :photo, as: :file %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "Btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>

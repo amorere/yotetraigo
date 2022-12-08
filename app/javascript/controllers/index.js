@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import DisplayDriverFieldsController from "./display_driver_fields_controller"
+application.register("display-driver-fields", DisplayDriverFieldsController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
