@@ -6,7 +6,7 @@
     <%= f.input :pickup_point %>
     <%= f.input :drop_point %>
     <%= f.input :pickup_datetime %>
-    <%= f.input :country %>
+    <%= f.input :country, as: :string %>
     <%= f.input :city %>
     <%= f.input :comune %>
     <%= f.input :confirmation_status, as: :hidden, input_html: { value: false } %>
