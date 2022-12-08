@@ -59,6 +59,6 @@ class ApplicationsController < ApplicationController
   end
 
   def app_params
-    params.require(:application).permit(:pickup_point, :drop_point, :pickup_datetime, :confirmation_status, :price)
+    params.require(:application).permit(:pickup_point, :drop_point, :pickup_datetime, :country, :city, :comune, :confirmation_status, :price)
   end
 end
