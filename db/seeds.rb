@@ -9,6 +9,8 @@
 # 1. create a user
 
 Booking.destroy_all
+Review.destroy_all
+Application.destroy_all
 Car.destroy_all
 User.destroy_all
 
