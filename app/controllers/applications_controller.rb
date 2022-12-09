@@ -2,7 +2,11 @@ class ApplicationsController < ApplicationController
   before_action :set_app, only: %i[show update destroy edit offer newoffer]
 
   def index
-    @apps = Application.all
+    if params[:query].present?
+      @apps = Application.search_by_country_city_and_comune(params[:query])
+    else
+      @apps = Application.all
+    end
   end
 
   def show
