@@ -15,7 +15,7 @@ user4 = User.create(email: "amorere10@gmail.com", encrypted_password: "901234", 
 car1 = Car.create(brand: "Toyota", model: "Corolla", color: "Black", plate: "ABC123", insurance_other_drivers: true, transmission: "Manual", user_id: user2.id)
 car2 = Car.create(brand: "Mazda", model: "btx5", color: "Green", plate: "ABC345", insurance_other_drivers: true, transmission: "Automatic", user_id: user4.id)
 # 3. create an application for that user
-application1 = Application.create(confirmation_status: "Pending", price: 100, pickup_point: "Av. Lonquén 16691", dropoff_point: "Santa Blanca 1942", pickup_datetime: "2022-03-11 02:30:00", country: "chile", city: "santiago", comune: "lo barnechea" user_id: user2.id, car_id: car1.id)
-application2 = Application.create(confirmation_status: "Pending", price: 50, pickup_point: "Uriarte 2116", dropoff_point: "Echeverría 2666", pickup_datetime: "2022-07-12 03:30:00", country: "argentina", city: "buenos aires", comune: "belgrano" user_id: user4.id, car_id: car2.id)
+application1 = Application.create(confirmation_status: "Pending", price: 100, pickup_point: "Av. Lonquén 16691", dropoff_point: "Santa Blanca 1942", pickup_datetime: "2022-03-11 02:30:00", country: "chile", city: "santiago", comune: "lo barnechea", user_id: user2.id, car_id: car1.id)
+application2 = Application.create(confirmation_status: "Pending", price: 50, pickup_point: "Uriarte 2116", dropoff_point: "Echeverría 2666", pickup_datetime: "2022-07-12 03:30:00", country: "argentina", city: "buenos aires", comune: "belgrano", user_id: user4.id, car_id: car2.id)
 # 4. create a booking for that user
 # 5. create a review for that user
