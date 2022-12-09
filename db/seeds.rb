@@ -8,6 +8,8 @@
 # lets create some users
 # 1. create a user
 
+Review.destroy_all
+Application.destroy_all
 Booking.destroy_all
 Car.destroy_all
 User.destroy_all
