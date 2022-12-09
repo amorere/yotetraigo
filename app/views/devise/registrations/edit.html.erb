@@ -1,7 +1,7 @@
 <div class='container d-flex flex-column align-items-center'>
   <div class="brandfont mt-5">
-    <h1>Edit <%= resource_name.to_s.humanize %></h1>
-
+    <h1>Edita tu <%= resource_name.to_s.humanize %></h1>
+  </div>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
@@ -39,5 +39,5 @@
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
     <%= link_to "Back", :back %>
-  </div>
+
 </div>
