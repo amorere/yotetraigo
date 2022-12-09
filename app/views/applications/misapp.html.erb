@@ -18,7 +18,7 @@
         <%= button_to "Eliminar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
         <p></p>
         <% if app.confirmation_status == "Contraoferta" %>
-          <%= button_to "Aceptar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
+          <%= button_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient" %>
         <% end %>
       </div>
     </div>
