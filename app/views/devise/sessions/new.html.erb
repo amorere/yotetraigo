@@ -1,6 +1,8 @@
 <div class='container d-flex flex-column align-items-center'>
   <div class= "brandfont mt-5">
     <h1><strong>Inicia sesion</strong></h1>
+  </div>
+    <p> Para empezar, inicia sesion</p>
   <div class="formulario mb-5">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
       <div class="form-inputs">
@@ -15,10 +17,9 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in"%>
+        <%= f.button :submit, "Log in", class: "Btn btn-primary form-control"%>
       </div>
     <% end %>
     <%= render "devise/shared/links" %>
-  </div>
   </div>
 </div>
