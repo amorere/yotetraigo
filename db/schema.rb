@@ -52,10 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_190605) do
     t.bigint "car_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
-    t.float "latitude2"
-    t.float "longitude2"
     t.string "country"
     t.string "city"
     t.string "comune"
