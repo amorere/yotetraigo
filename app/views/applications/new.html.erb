@@ -1,16 +1,19 @@
-<div class='container'>
-  <h1>Agrega tu evento</h1>
+<div class='container d-flex flex-column align-items-center'>
+  <div class= "brandfont mt-5">
+    <h1>Agrega tu evento</h1>
+  </div>
   <p>Completa el siguiente formulario.</p>
-  <%= simple_form_for [@car, @app] do |f| %>
-    <%= f.input :price %>
-    <%= f.input :pickup_point %>
-    <%= f.input :drop_point %>
-    <%= f.input :pickup_datetime %>
-    <%= f.input :country, as: :string %>
-    <%= f.input :city %>
-    <%= f.input :comune %>
-    <%= f.input :confirmation_status, as: :hidden, input_html: { value: false } %>
-
-    <%= f.submit %>
-  <% end %>
+  <div class="formulario mb-5">
+    <%= simple_form_for [@car, @app] do |f| %>
+      <%= f.input :price, placeholder: "Price", label: false %>
+      <%= f.input :pickup_point, placeholder: "Pickup point", label: false %>
+      <%= f.input :drop_point, placeholder: "Drop point", label: false %>
+      <%= f.input :pickup_datetime, placeholder: "Pickup datetime", label: false %>
+      <%= f.input :country, as: :string, placeholder: "Country", label: false %>
+      <%= f.input :city, placeholder: "City", label:false %>
+      <%= f.input :comune, placeholder: "Comune", label: false %>
+      <%= f.input :confirmation_status, as: :hidden, input_html: { value: false } %>
+      <%= f.submit class: "btn btn-primary form-control" %>
+    <% end %>
+  </div>
 </div>
