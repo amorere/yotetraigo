@@ -16,14 +16,14 @@
           </div>
           <div class="row">
             <div class="col">
-              <%= f.input :first_name, class: "form-control", placeholder: "Escrite tu nombre", label: false %>
+              <%= f.input :first_name, class: "form-control", placeholder: "Escribe tu nombre", label: false %>
             </div>
-            <div class="row">
-              <div class="col">
-                <%= f.input :dni, class: "form-control", placeholder: "Escrite tu dni", label: false %>
+            <div class="row md-12">
+              <div class="col md-6">
+                <%= f.input :dni, class: "form-control", placeholder: "Escribe tu dni", label: false %>
               </div>
               <div class="col md-6">
-                <%= f.input :phone_number, class: "form-control", placeholder: "Escrite tu numero de telefono", label: false %>
+                <%= f.input :phone_number, class: "form-control", placeholder: "Escribe tu numero de telefono", label: false %>
               </div>
             </div>
             <%= f.input :date_of_birth, as: :date, html5: true %>

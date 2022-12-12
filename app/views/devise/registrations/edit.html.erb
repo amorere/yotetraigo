@@ -4,14 +4,12 @@
   </div>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
-
       <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :first_name, class: "form-control", placeholder: "Escrite tu nombre", label: false %>
-          <%= f.input :last_name %>
-          <%= f.input :phone_number %>
+          <%= f.input :first_name, class: "form-control", placeholder: "Escribe tu nombre", label: false %>
+          <%= f.input :last_name, placeholder: "Escribe tu apellido", label: false %>
+          <%= f.input :phone_number, placeholder: "Telefono celular", label: false %>
           <%= f.input :date_of_birth, as: :date, html5: true %>
-
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -39,5 +37,5 @@
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
     <%= link_to "Back", :back %>
-
+  </div>
 </div>
