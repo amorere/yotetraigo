@@ -1,5 +1,11 @@
 <div class="container mt-3">
     <h2>ESTAMOS ACA?</h2>
+    <div>
+      <%= form_with url: applications_path, class: "d-flex", method: :get do %>
+         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Escribe Pais, Ciudad o Comuna que Buscas" %>
+         <%= submit_tag "Buscar", class: "btn btn-outline-search" %>
+         <% end %>
+    </div>
   <% @apps.each do |app| %>
      <div class="card-product my-4 justify-content-start">
 
