@@ -19,6 +19,10 @@
           <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient", data: { turbo_method: "post" } %>
           <%= link_to "Ofrecer mis servicios por otro precio", offer_path(app), class: "btn btn-gradient" %>
         </div>
+        <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   <% end %>
 </div>

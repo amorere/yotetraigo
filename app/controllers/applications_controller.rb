@@ -4,6 +4,16 @@ class ApplicationsController < ApplicationController
   def index
     if params[:query].present?
       @apps = Application.search_by_country_city_and_comune(params[:query])
+      @apps = @apps.where.not(lat: nil, lng: nil, lat2: nil, lng2: nil)
+      @markers = @apps.geocoded.map do |app|
+        {
+          lat: app.lat,
+          lng: app.long,
+          lat2: app.lat,
+          lng2: app.long
+
+        }
+      end
     else
       @apps = Application.all
     end
