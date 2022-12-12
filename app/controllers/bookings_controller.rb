@@ -11,7 +11,15 @@ class BookingsController < ApplicationController
   end
 
   def misbook
-    @misbook = current_user.bookings
+    if current_user.is_driver
+      @misbook = current_user.bookings
+    else
+      @misbook = []
+      current_user.cars.each do |car|
+        @misbook << car.bookings
+      end
+      @misbook = @misbook[0]
+    end
   end
 
   def create
@@ -33,8 +41,11 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    # redirect_to booking_path(@booking)
+    @booking = Booking.find(params[:id])
+    @booking.status = "Completado"
+    @booking.save
+    redirect_to misbook_path
+
   end
 
   def destroy
