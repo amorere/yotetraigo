@@ -6,7 +6,7 @@
       </div>
       <div class="card-product-infos">
         <p>Nombre de usuario: <%= off.application.user.first_name %></p>
-        <p>Reviews: <%= off.application.user.reviews %>
+        <p>Reviews: <%= off.application.user.reviews.average(:rating).round %>
         <p>Precio: <%= off.price %></p>
         <p>Estatus: <%= off.status %></p>
       </div>
@@ -19,3 +19,4 @@
 </div>
 <% end %>
 </div>
+
