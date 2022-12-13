@@ -30,7 +30,10 @@ application2 = Application.create!(confirmation_status: "Pending", price: 50, pi
 
 puts "creando reviews"
 # 4. create a review for that user
-review1 = Review.create!(rating: 5, comment: "Excelente conductor", user_id: user2.id)
+review1 = Review.create!(rating: 5, comment: "Excelente conductor", user_id: user1.id)
+review1 = Review.create!(rating: 4, comment: "Excelente conductor", user_id: user1.id)
+review1 = Review.create!(rating: 3, comment: "Excelente conductor", user_id: user1.id)
+review1 = Review.create!(rating: 2, comment: "Excelente conductor", user_id: user1.id)
 
 
 puts "creando bookings"
