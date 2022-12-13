@@ -7,6 +7,7 @@ class Application < ApplicationRecord
   geocoded_by :drop_point, :latitude => :lat2, :longitude => :long2
   after_validation :geocode, if: :will_save_change_to_pickup_point?
   after_validation :geocode, if: :will_save_change_to_drop_point?
+  has_many :offers
   include PgSearch::Model
   pg_search_scope :search_by_country_city_and_comune,
     against: [ :country, :city, :comune ],
