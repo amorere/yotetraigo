@@ -12,8 +12,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest"> -->
     <%= favicon_link_tag asset_path("favicon.ico")  %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>     
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+
   </head>
 
 
