@@ -1,11 +1,11 @@
 <div class='container d-flex flex-column align-items-center'>
   <div class= "brandfont mt-5">
-    <h1>Agrega tu evento</h1>
+    <h1>¡Evalua tu experiencia!</h1>
   </div>
-  <p>Completa el siguiente formulario.</p>
+  <p>Entreganos tu comentario y realiza la evaluacion del servicio.</p>
   <div class="formulario mb-5">
     <%= simple_form_for [@booking, @review] do |f| %>
-      <%= f.input :rating, placeholder: "Rating", label: false , collection: [1,2,3,4,5]  %>
+      <%= f.input :rating, placeholder: "Ingresa con que nota evaluas tu experiencia", label: false , collection: [1,2,3,4,5]  %>
       <%= f.input :comment, placeholder: "Comment", label: false %>
 
       <%= f.submit class: "btn btn-primary form-control" %>
