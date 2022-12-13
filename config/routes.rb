@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get '/misbook', to: 'bookings#misbook'
   get '/applications/:id/offer', to: 'applications#offer', as: :offer
   patch '/applications/:id', to: 'applications#newoffer'
+  get '/applications/:application_id/offertapp', to: 'offers#ofertapp', as: :ofertapp
+  get '/offertappdriver', to: 'offers#ofertappdriver', as: :ofertappdriver
+  patch '/offers/:id', to: 'offers#update', as: :updateoffer
+  patch '/bookings/:id', to: 'bookings#update', as: :updatecomplete
 
   resources :cars do
     resources :bookings, only: %i[new create]
@@ -20,6 +24,9 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create]
   end
 
-  resources :applications, only: %i[index show edit update destroy]
+  resources :applications, only: %i[index show edit update destroy] do
+    resources :offers, only: %i[new create]
+  end
+
   resources :reviews, only: %i[show destroy]
 end

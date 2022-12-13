@@ -1,28 +1,33 @@
 <div class="container">
 <% @misapp.each do |app| %>
-   <div class= 'container'>
-  <div class="card-product my-4">
-    <div>
-      </div>
-      <div class="card-product-infos">
-        <p>Pickup point: <%= app.pickup_point %></p>
-        <p>Drop point: <%= app.drop_point %>
-        <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
-        <p>Precio: <%= app.price %></p>
-        <p>Estado: <%= app.confirmation_status %></p>
-
-      </div>
+  <% if app.confirmation_status != "Cerrado" %>
+    <div class= 'container'>
+    <div class="card-product my-4">
       <div>
-        <%= link_to "Editar Solicitud de viaje",   edit_application_path(app), class: "btn btn-gradient" %>
-        <p></p>
-        <%= button_to "Eliminar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
-        <p></p>
-        <% if app.confirmation_status == "Contraoferta" %>
-          <%= button_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient" %>
-        <% end %>
+        </div>
+        <div class="card-product-infos">
+          <p>Pickup point: <%= app.pickup_point %></p>
+          <p>Drop point: <%= app.drop_point %>
+          <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
+          <p>Precio: <%= app.price %></p>
+          <p>Estado: <%= app.confirmation_status %></p>
+
+        </div>
+        <div>
+          <%= link_to "Editar Solicitud de viaje",   edit_application_path(app), class: "btn btn-gradient" %>
+          <p></p>
+          <%= button_to "Eliminar Solicitud", app, method: :delete, class: "btn btn-gradient" %>
+          <p></p>
+          <% if app.confirmation_status == "Contraoferta" %>
+            <%= button_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient" %>
+          <% end %>
+          <% if app.offers.size > 0 %>
+            <%= link_to "Ver ofertas", ofertapp_path( app ), class: "btn btn-gradient" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<% end %>
-</div>
+  <% end %>
+  <% end %>
+  </div>

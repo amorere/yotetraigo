@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :cars
   has_many :bookings
   has_many :reviews
-
+  has_many :offers
   has_many :applications
 
   has_one_attached :photo
