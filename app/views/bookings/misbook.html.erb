@@ -13,7 +13,7 @@
 
       </div>
       <div>
-        <%= link_to "Editar Solicitud de viaje",    edit_booking_path(book), class: "btn btn-gradient" %>
+        <%= link_to "Editar",    edit_booking_path(book), class: "btn btn-primary" %>
         <p></p>
         <%= button_to "Eliminar Solicitud", book, method: :delete, class: "btn btn-gradient" %>
          <p></p>
@@ -23,7 +23,6 @@
          <% if book.status == "Completado" %>
            <%= link_to "Dejar mi reseña",  new_booking_review_path(book), class: "btn btn-gradient"  %>
          <% end %>
-
       </div>
     </div>
   </div>

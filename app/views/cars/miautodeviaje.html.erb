@@ -1,29 +1,27 @@
  <% if @misautos.size > 0 %>
-  <div class="container">
-    <h1>Escoge con que auto quieres realizar tu viaje</h1>
-  <% @misautos.each do |car| %>
-    <div class= 'container'>
-    <div class="card-product my-4">
-
-      <div>
+  <div class="container mt3">
+    <h3> Mis autos:</h3>
+    <h5> Elegi un auto, para realizar el viaje.</h5>
+      <% @misautos.each do |car| %>
+        <div class= 'card-product my-4 d-flex '>
+          <div class="container">
+              <div class="card-product-infos">
+                <%= image_tag("Traffic.webp") %>
+                <h6>Model: <%= car.model %></h6>
+                <h6>Brand: <%= car.brand %>
+                <h6>Color: <%= car.color %></h6>
+                <h6>Transmission: <%= car.transmission %></h6>
+                <h6>Seguro para terceros: <%= car.insurance_other_drivers %></h6>
+                <div class="d-flex justify-content-end w-100 align-items mb-4 h-100 align-items-end">
+                    <div class="me-4">
+                      <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-primary" %>
+                    </div>
+                </div>
+              </div>
+          </div>
         </div>
-        <div class="card-product-infos">
-          <h2>Model: <%= car.model %></h2>
-          <p>Brand: <%= car.brand %>
-          <p>Color: <%= car.color %></p>
-          <p>Transmission: <%= car.transmission %></p>
-          <p>Seguro para terceros: <%= car.insurance_other_drivers %></p>
-        </div>
-        <div>
-          <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-gradient" %>
-          <p></p>
-
-        </div>
-      </div>
+      <% end %>
     </div>
-  </div>
-  <% end %>
-  </div>
  <% else %>
   <h1>¡Primero sube tu auto!</h1>
   <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary" %>

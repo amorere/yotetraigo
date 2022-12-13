@@ -24,7 +24,7 @@
               <%= image_tag "logo.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile",  edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Mi perfil",  edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Mis Bookings", misbook_path, class: "dropdown-item" %>
               <% if current_user.is_driver %>
                 <%= link_to "Mis ofertas", ofertappdriver_path, class: "btn btn-primary" %>
@@ -32,12 +32,12 @@
                 <%= link_to "Mis Solicitudes",  misapp_path, class: "dropdown-item" %>
               <% end %>
               <%= link_to "Mis Autos", misautos_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Cerrar Sesion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Inicia sesion", new_user_session_path, class: "nav-link" %>
           </li>
            <li class="nav-item me-5">
               <%= link_to "Registrate", new_user_registration_path, class: "nav-link" %>

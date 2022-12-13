@@ -1,23 +1,24 @@
 <div class="container">
-<% @misautos.each do |car| %>
-   <div class= 'container'>
-  <div class="card-product my-4">
-    <div>
-      </div>
-      <div class="card-product-infos">
-        <h2>Model: <%= car.model %></h2>
-        <p>Brand: <%= car.brand %>
-        <p>Color: <%= car.color %></p>
-        <p>Transmission: <%= car.transmission %></p>
-        <p>Seguro para terceros: <%= car.insurance_other_drivers %></p>
-      </div>
-      <div>
-        <%= link_to "Editar Auto",  edit_car_path(car), class: "btn btn-gradient" %>
-        <p></p>
-        <%= button_to "Eliminar Auto", car, method: :delete, class: "btn btn-gradient" %>
+  <h2> Vehiculos </h2>
+  <% @misautos.each do |car| %>
+      <div class= 'container'>
+      <div class="card-product my-4 ">
+        <div>
+          </div>
+          <div class="card-product-infos">
+            <h2>Model: <%= car.model %></h2>
+            <p>Brand: <%= car.brand %>
+            <p>Color: <%= car.color %></p>
+            <p>Transmission: <%= car.transmission %></p>
+            <p>Seguro para terceros: <%= car.insurance_other_drivers %></p>
+          </div>
+          <div>
+            <%= link_to "Editar Auto",  edit_car_path(car), class: "btn btn-primary" %>
+            <p></p>
+            <%= button_to "Eliminar Auto", car, method: :delete, class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<% end %>
+  <% end %>
 </div>

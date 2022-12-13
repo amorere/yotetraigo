@@ -7,7 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # lets create some users
 # 1. create a user
-
 Booking.destroy_all
 Review.destroy_all
 Application.destroy_all
@@ -16,7 +15,6 @@ User.destroy_all
 
 puts "creando usuarios"
 user1 = User.create!(email: "jjfatorini@gmail.com", password: "123456", first_name: "Juan", last_name: "Fatorini", date_of_birth: "1990-01-01", driver_license_expiry: "2024-01-01", phone_number: "123456789", is_driver: true, dni: "12345678", insurance: true, driver_license_dni: "12345678", criminal_record: "No")
-
 user2 = User.create!(email: "falbujar@gmail.com", password: "789012", first_name: "Fiorella", last_name: "Albujar", date_of_birth: "1990-01-01", driver_license_expiry: "2023-01-01", phone_number: "567887623", is_driver: false, dni: "87654321", insurance: true, driver_license_dni: "87654321", criminal_record: "No")
 user3 = User.create!(email: "graggiog@gmail.com" , password: "345678", first_name: "Gonzalo", last_name: "Raggio", date_of_birth: "1995-01-01", driver_license_expiry: "2022-01-01", phone_number: "101112232", is_driver: true, dni: "98765432", insurance: true, driver_license_dni: "98765432", criminal_record: "No")
 user4 = User.create!(email: "amorere10@gmail.com", password: "901234", first_name: "Agustin", last_name: "Morere", date_of_birth: "1992-02-03", driver_license_expiry: "2025-02-02", phone_number: "131415161", is_driver: false, dni: "87654301", insurance: true, driver_license_dni: "87604321", criminal_record: "No")
@@ -33,6 +31,7 @@ application2 = Application.create!(confirmation_status: "Pending", price: 50, pi
 puts "creando reviews"
 # 4. create a review for that user
 review1 = Review.create!(rating: 5, comment: "Excelente conductor", user_id: user2.id)
+
 
 puts "creando bookings"
 # 5. create a booking for that user
