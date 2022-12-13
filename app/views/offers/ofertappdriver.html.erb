@@ -1,0 +1,21 @@
+<div class="container">
+<% @offers.each do |off| %>
+   <div class= 'container'>
+  <div class="card-product my-4">
+    <div>
+      </div>
+      <div class="card-product-infos">
+        <p>Nombre de usuario: <%= off.application.user.first_name %></p>
+        <p>Reviews: <%= off.application.user.reviews %>
+        <p>Precio: <%= off.price %></p>
+        <p>Estatus: <%= off.status %></p>
+      </div>
+      <div>
+        <%= button_to "Aceptar Solicitud", car_bookings_path( off.application.car_id, app_id: off.application_id ), class: "btn btn-gradient" %>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>

@@ -1,3 +1,4 @@
+
 <div class="container mt3">
   <h3 class="brandfont">Mis viajes:</h3>
       <% @misapp.each do |app| %>
@@ -19,13 +20,14 @@
              <div class="me-4">
               <%= button_to "Eliminar", app, method: :delete, class: "btn btn-primary" %>
              </div>
-
              <% if app.confirmation_status == "Contraoferta" %>
-            <div class="me-4">
-              <%= button_to "Aceptar", app, method: :delete, class: "btn btn-primary" %>
-            </div>
+                <%= button_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient" %>
+             <% end %>
+             <% if app.offers.size > 0 %>
+                <%= link_to "Ver ofertas", ofertapp_path( app ), class: "btn btn-gradient" %>
+             <% end %>
              <% end %>
            </div>
        </div>
-      <% end %>
+    <% end %>
 </div>

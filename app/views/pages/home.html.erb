@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Mi pagina de prueba</title>
-  </head>
 
-  <body>
      <div class="banner d-flex align-items-end">
         <div class="container pb-5">
           <h1>Good Buddy</h1>
           <h2><strong>Volve seguro</strong> nosotros <strong>manejamos.</strong></h2>
           <p>Donde quieras y cuando quieras, tene un Buddy a tu alcance.</p>
-
-          <%= link_to "Necesito un Buddy", miautodeviaje_path(), class: "btn btn-primary" %>
-          <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary" %>
-          <%= link_to "Quiero ser un Buddy", applications_path, class: "btn btn-primary" %>
+          <% if user_signed_in? %>
+            <% if current_user.is_driver %>
+              <%= link_to "Quiero realizar un viaje", applications_path, class: "btn btn-primary" %>
+              <% else %>
+              <%= link_to "Solicitar un viaje", miautodeviaje_path, class: "btn btn-primary" %>
+              <% end %>
+            <% else %>
+              <%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary" %>
+          <% end %>
         </div>
       </div>
-  </body>
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-12">
@@ -76,4 +73,3 @@
         </div>
       </div>
   </div>
-</html>

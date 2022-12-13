@@ -1,5 +1,14 @@
 <div class="container mt-3">
-    <h2>Viajes disponibles:</h2>
+
+    <h1>Viajes disponibles:</h1>
+
+    <div>
+      <%= form_with url: applications_path, class: "d-flex", method: :get do %>
+         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Escribe Pais, Ciudad o Comuna que Buscas" %>
+         <%= submit_tag "Buscar", class: "btn btn-outline-search" %>
+         <% end %>
+    </div>
+
   <% @apps.each do |app| %>
      <div class="card-product my-4 justify-content-start">
         <div class="card-product-infos text-left ps-5">
@@ -9,9 +18,15 @@
           <p>Precio: <%= app.price %></p>
         </div>
         <div class= "pe-5 ms-auto">
-          <%= link_to "Aceptar", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-primary", data: { turbo_method: "post" } %>
-          <%= link_to "Negociar", offer_path(app), class: "btn btn-primary" %>
+
+          <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient", data: { turbo_method: "post" } %>
+          <%= link_to "Negociar precio", new_application_offer_path(app), class: "btn btn-gradient" %>
+
         </div>
+        <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   <% end %>
 </div>

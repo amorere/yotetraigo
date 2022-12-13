@@ -2,7 +2,31 @@ class ApplicationsController < ApplicationController
   before_action :set_app, only: %i[show update destroy edit offer newoffer]
 
   def index
-    @apps = Application.all
+    if params[:query].present?
+      @apps = Application.search_by_country_city_and_comune(params[:query])
+      @apps = @apps.where.not(lat: nil, long: nil, lat2: nil, long2: nil)
+      @markers = @apps.geocoded.map do |app|
+        {
+          lat: app.lat,
+          long: app.long,
+          lat2: app.lat2,
+          long2: app.long2
+
+        }
+      end
+    else
+      @apps = Application.all
+      @apps = @apps.where.not(lat: nil, long: nil, lat2: nil, long2: nil)
+      @markers = @apps.geocoded.map do |app|
+        {
+          lat: app.lat,
+          long: app.long,
+          lat2: app.lat2,
+          long2: app.long2
+
+        }
+      end
+    end
   end
 
   def show
@@ -59,6 +83,6 @@ class ApplicationsController < ApplicationController
   end
 
   def app_params
-    params.require(:application).permit(:pickup_point, :drop_point, :pickup_datetime, :confirmation_status, :price)
+    params.require(:application).permit(:pickup_point, :drop_point, :pickup_datetime, :country, :city, :comune, :confirmation_status, :price)
   end
 end
