@@ -10,20 +10,21 @@
     </div>
 
   <% @apps.each do |app| %>
-     <div class="card-product my-4 justify-content-start">
-        <div class="card-product-infos text-left ps-5">
-          <p>Pickup point: <%= app.pickup_point %></p>
-          <p>Drop point: <%= app.drop_point %>
-          <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
-          <p>Precio: <%= app.price %></p>
-        </div>
-        <div class= "pe-5 ms-auto">
+    <% if app.confirmation_status != "Cerrado" %>
+      <div class="card-product my-4 justify-content-start">
+          <div class="card-product-infos text-left ps-5">
+            <p>Pickup point: <%= app.pickup_point %></p>
+            <p>Drop point: <%= app.drop_point %>
+            <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
+            <p>Precio: <%= app.price %></p>
+          </div>
+          <div class= "pe-5 ms-auto">
 
-          <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient", data: { turbo_method: "post" } %>
-          <%= link_to "Negociar precio", new_application_offer_path(app), class: "btn btn-gradient" %>
-          <%= link_to "Ver Mapa", application_path(app), class: "btn btn-gradient" %>
-
-        </div>
-    </div>
+            <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient", data: { turbo_method: "post" } %>
+            <%= link_to "Negociar precio", new_application_offer_path(app), class: "btn btn-gradient" %>
+            <%= link_to "Ver Mapa", application_path(app), class: "btn btn-gradient" %>
+          </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
