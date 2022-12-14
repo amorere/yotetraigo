@@ -1,7 +1,7 @@
 <div class="container mt-3">
-
-    <h1>Viajes disponibles:</h1>
-
+  <div class="brandfont mb-4">
+    <h1>Viajes Disponibles:</h1>
+  </div>
     <div>
       <%= form_with url: applications_path, class: "d-flex", method: :get do %>
          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Escribe Pais, Ciudad o Comuna que Buscas" %>
@@ -12,16 +12,20 @@
   <% @apps.each do |app| %>
      <div class="card-product my-4 justify-content-start">
         <div class="card-product-infos text-left ps-5">
-          <p>Pickup point: <%= app.pickup_point %></p>
-          <p>Drop point: <%= app.drop_point %>
-          <p>Dia y hora de recogida: <%= app.pickup_datetime %></p>
-          <p>Precio: <%= app.price %></p>
+          <h5><strong>Pickup point: <%= app.pickup_point %></strong></h5>
+          <h5>Drop point: <%= app.drop_point %></h5>
+          <h5><strong>Dia y hora de recogida: <%= app.pickup_datetime %></strong></h5>
+          <% if app.country == "Chile" %>
+            <h5>Precio: <%= app.price %> CLP </h5>
+          <% else %>
+            <h5>Precio: <%= app.price %> USD </h5>
+          <% end %>
         </div>
         <div class= "pe-5 ms-auto">
 
-          <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient", data: { turbo_method: "post" } %>
-          <%= link_to "Negociar precio", new_application_offer_path(app), class: "btn btn-gradient" %>
-          <%= link_to "Ver Mapa", application_path(app), class: "btn btn-gradient" %>
+          <%= link_to "Aceptar viaje", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-primary", data: { turbo_method: "post" } %>
+          <%= link_to "Negociar precio", new_application_offer_path(app), class: "btn btn-primary" %>
+          <%= link_to "Ver Mapa", application_path(app), class: "btn btn-primary" %>
 
         </div>
     </div>
