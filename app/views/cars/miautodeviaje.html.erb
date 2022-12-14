@@ -1,26 +1,44 @@
- <% if @misautos.size > 0 %>
-  <div class="container mt-3">
-    <div class= "brandfont align-center mt-3">
+
+<div class="container">
+  <% if @misautos.size > 0 %>
+    <div class="brandfont text-center mt-3 mb-3">
       <h1> Mis autos:</h1>
-      <h2> Elegi un auto, para realizar el viaje.</h2>
-        <% @misautos.each do |car| %>
-            <div class="card-product-infos">
-                <div class="card mt-5">
-                  <h2>· Model: <%= car.model %></h2>
-                  <h2>· Brand: <%= car.brand %>
-                  <h2>· Color: <%= car.color %></h2>
-                  <h2>· Transmission: <%= car.transmission %></h2>
-                  <h2>· Seguro para terceros: <%= car.insurance_other_drivers %></h2>
-                  <div class="d-flex justify-content-end w-100 align-items mb-4 h-100 align-items-end">
-                    <div class="me-4">
-                      <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-primary" %>
-                    </div>
-                  </div>
-                </div>
-             </div>
-        <% end %>
+      <h5> Elegi un auto, para realizar tu viaje.</h5>
+    </div>
+      <% @misautos.each do |car| %>
+    <div class="row d-flex justify-content-center mb-5">
+      <div class="card-product cards">
+        <div class="col-4">
+          <div>
+            <div>
+              <% if car.photo.attached? %>
+                <%= image_tag car.photo, height: 150 %>
+              <% else %>
+                <%= image_tag "Traffic.webp", height: 150 %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="ms-5">
+            <h6>Model: <%= car.model %></h6>
+            <h6>Brand: <%= car.brand %>
+            <h6>Color: <%= car.color %></h6>
+            <h6>Transmission: <%= car.transmission %></h6>
+            <h6>Seguro para terceros: <%= car.insurance_other_drivers %></h6>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="text-center">
+            <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
     </div>
- <% else %>
-  <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary" %>
-<% end %>
+    <% end %>
+  <% else %>
+    <h1>¡Primero sube tu auto!</h1>
+    <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
