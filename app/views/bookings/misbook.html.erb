@@ -1,29 +1,26 @@
-<div class="container">
-<% @misbook.each do |book| %>
-   <div class= 'container'>
-  <div class="card-product my-4">
-    <div>
-      </div>
-      <div class="card-product-infos">
-        <p>Pickup point: <%= book.application.pickup_point %></p>
-        <p>Drop point: <%= book.application.drop_point %>
-        <p>Dia y hora de recogida: <%= book.application.pickup_datetime %></p>
-        <p>Precio: <%= book.application.price %></p>
-        <p>Status: <%= book.status %></p>
-
-      </div>
-      <div>
-        <%= button_to "Eliminar", book, method: :delete, class: "btn btn-gradient" %>
-         <p></p>
-         <% if book.status == "Pendiente" %>
-          <%= button_to "Completar mi viaje",  updatecomplete_path(book), method: :patch,  class: "btn btn-gradient"  %>
-         <% end %>
-         <% if book.status == "Completado" %>
-           <%= link_to "Dejar mi reseña",  new_booking_review_path(book), class: "btn btn-gradient"  %>
-         <% end %>
-      </div>
-    </div>
+<div class="container mt-3">
+  <div class="brandfont mb-4">
+    <h1>Mis Bookings:</h1>
   </div>
-</div>
-<% end %>
+  <% @misbook.each do |book| %>
+      <div class="card-product my-4 justify-content-start">
+          <div class="card-product-infos text-left ps-5">
+            <h5><strong>Pickup point: <%= book.application.pickup_point %></strong></h5>
+            <h5>Drop point: <%= book.application.drop_point %></h5>
+            <h5><strong>Dia y hora de recogida: <%= book.application.pickup_datetime %></strong></h5>
+            <h5>Precio: <%= book.application.price %></h5>
+            <h5>Status: <%= book.status %></h5>
+          </div>
+          <div class= "pe-5 ms-auto">
+            <%= button_to "Eliminar", book, method: :delete, class: "btn btn-primary" %>
+            <p></p>
+            <% if book.status == "Pendiente" %>
+              <%= button_to "Completar mi viaje",  updatecomplete_path(book), method: :patch,  class: "btn btn-primary"  %>
+            <% end %>
+            <% if book.status == "Completado" %>
+              <%= link_to "Dejar mi reseña",  new_booking_review_path(book), class: "btn btn-primary"  %>
+            <% end %>
+          </div>
+      </div>
+  <% end %>
 </div>

@@ -1,23 +1,19 @@
 <div class="container">
 <% @offers.each do |off| %>
-   <div class= 'container'>
-  <div class="card-product my-4">
-    <div>
-      </div>
-      <div class="card-product-infos">
-        <p>Nombre de usuario: <%= off.user.first_name %></p>
-        <p>Reviews: <%= off.user.reviews.average(:rating).round(1) %>
-        <p>Viajes: <%= off.user.reviews.count %>
-        <p>Precio: <%= off.price %></p>
-        <p>Estatus: <%= off.status %></p>
-      </div>
-      <div>
-        <%= button_to "Aceptar Solicitud",   updateoffer_path( off ), method: :patch, class: "btn btn-gradient" %>
-        <%= link_to "Volver",   misapp_path, class: "btn btn-gradient" %>
-        <p></p>
-      </div>
+    <div class="card-product my-4 justify-content-start">
+        <div class="card-product-infos text-left ps-5">
+          <h5>Nombre de usuario: <%= off.user.first_name %></h5>
+          <h5>Reviews: <%= off.user.reviews.average(:rating).round(1) %>
+          <h5>Viajes: <%= off.user.reviews.count %>
+          <h5>Precio: <%= off.price %></h5>
+          <h5>Estatus: <%= off.status %></h5>
+        </div>
+        <div class= "pe-5 ms-auto">
+
+          <%= button_to "Aceptar Solicitud",   updateoffer_path( off ), method: :patch, class: "btn btn-primary" %>
+          <%= link_to "Volver",   misapp_path, class: "btn btn-primary" %>
+        </div>
     </div>
-  </div>
-</div>
+
 <% end %>
 </div>
