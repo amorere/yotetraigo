@@ -1,5 +1,5 @@
  <% if @misautos.size > 0 %>
-  <div class="container mt-3">
+  <div class="container d-flex flex-column align-items-center mt-3">
     <div class= "brandfont align-center mt-3">
       <h1> Mis autos:</h1>
       <h2> Elegi un auto, para realizar el viaje.</h2>
@@ -22,5 +22,5 @@
       </div>
     </div>
  <% else %>
-  <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary" %>
+  <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary form-control" %>
 <% end %>
