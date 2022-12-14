@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get '/cancel_policy', to: 'pages#cancel_policy'
+  get '/medio_de_pago', to: 'misbook#medio_de_pago'
   # Defines the root path route ("/")
   # root "articles#index"
   get '/misautos', to: 'cars#misautos'
