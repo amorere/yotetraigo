@@ -43,14 +43,14 @@ car5 = Car.create!(brand: "Ford", model: "Escort", color: "Black", plate: "SEX36
 car6 = Car.create!(brand: "Ford", model: "Fiesta", color: "White", plate: "XZX696", insurance_other_drivers: true, transmission: "Manual", user_id: user9.id)
 
 puts "creando applications"
-application1 = Application.create!(confirmation_status: "Confirmed", price: 45000, pickup_point: "Av. Lonquén 16691", drop_point: "Santa Blanca 1942", pickup_datetime: "2022-03-11 02:30:00", country: "Chile", city: "santiago", comune: "Lo Barnechea", user_id: user2.id, car_id: car1.id)
-application2 = Application.create!(confirmation_status: "Pending", price: 35000, pickup_point: "Uriarte 2116", drop_point: "Echeverría 2666", pickup_datetime: "2022-07-12 03:30:00", country: "Argentina", city: "buenos aires", comune: "Belgrano", user_id: user4.id, car_id: car2.id)
-application3 = Application.create!(confirmation_status: "Pending", price: 48, pickup_point: "Uno Sur 64", drop_point: "Los Sauzales 2296", pickup_datetime: "2022-03-10 04:30:00", country: "Chile", city: "Santiago", comune: "Batuco", user_id: user5.id, car_id: car3.id)
-application4 = Application.create!(confirmation_status: "Pending", price: 25000, pickup_point: "Tupper 1999", drop_point: "María Luisa Santander 199", pickup_datetime: "2022-04-15 02:30:00", country: "Chile", city: "Santiago", comune: "Santiago", user_id: user6.id, car_id: car4.id)
+application1 = Application.create!(confirmation_status: "Pending", price: 45000, pickup_point: "Av. Lonquén 16691", drop_point: "Santa Blanca 1942", pickup_datetime: "2022-03-11 02:30:00", country: "Chile", city: "santiago", comune: "Lo Barnechea", user_id: user2.id, car_id: car1.id)
+application2 = Application.create!(confirmation_status: "Pending", price: 35000, pickup_point: "Uriarte 2116", drop_point: "Echeverría 2666", pickup_datetime: "2022-07-12 03:30:00", country: "Argentina", city: "buenos aires", comune: "Belgrano", user_id: user2.id, car_id: car1.id)
+application3 = Application.create!(confirmation_status: "Pending", price: 48, pickup_point: "Uno Sur 64", drop_point: "Los Sauzales 2296", pickup_datetime: "2022-03-10 04:30:00", country: "Chile", city: "Santiago", comune: "Batuco", user_id: user2.id, car_id: car1.id)
+application4 = Application.create!(confirmation_status: "Pending", price: 25000, pickup_point: "Tupper 1999", drop_point: "María Luisa Santander 199", pickup_datetime: "2022-04-15 02:30:00", country: "Chile", city: "Santiago", comune: "Santiago", user_id: user2.id, car_id: car1.id)
 application5 = Application.create!(confirmation_status: "Pending", price: 40000, pickup_point: "Av. Santiago de Compostela 3900", drop_point: "Bonpland 2457", pickup_datetime: "2022-05-01 03:00:00", country: "Argentina", city: "Buenos Aires", comune: "Buenos Aires", user_id: user4.id, car_id: car2.id)
-application6 = Application.create!(confirmation_status: "Confirmed", price: 50, pickup_point: "Av. Miraflores 6661", drop_point: "Carlos Peña Otaegui 9745", pickup_datetime: "2022-02-05 04:00:00", country: "Chile", city: "Santiago", comune: "Renca", user_id: user9.id, car_id: car6.id)
-application7 = Application.create!(confirmation_status: "Confirmed", price: 15000, pickup_point: "Av. El Salto 4950", drop_point: "Sagaro 430", pickup_datetime: "2022-01-01 05:00:00", country: "Chile", city: "Santiago", comune: "Huechuraba", user_id: user2.id, car_id: car4.id)
-application8 = Application.create!(confirmation_status: "Confirmed", price: 25000, pickup_point: "Av. El Salto 4950", drop_point: "Lucaro 9323", pickup_datetime: "2022-01-01 05:00:00", country: "Chile", city: "Santiago", comune: "Huechuraba", user_id: user9.id, car_id: car6.id)
+application6 = Application.create!(confirmation_status: "Pending", price: 50, pickup_point: "Av. Miraflores 6661", drop_point: "Carlos Peña Otaegui 9745", pickup_datetime: "2022-02-05 04:00:00", country: "Chile", city: "Santiago", comune: "Renca", user_id: user9.id, car_id: car6.id)
+application7 = Application.create!(confirmation_status: "Pending", price: 15000, pickup_point: "Av. El Salto 4950", drop_point: "Sagaro 430", pickup_datetime: "2022-01-01 05:00:00", country: "Chile", city: "Santiago", comune: "Huechuraba", user_id: user2.id, car_id: car4.id)
+application8 = Application.create!(confirmation_status: "Pending", price: 25000, pickup_point: "Av. El Salto 4950", drop_point: "Lucaro 9323", pickup_datetime: "2022-01-01 05:00:00", country: "Chile", city: "Santiago", comune: "Huechuraba", user_id: user9.id, car_id: car6.id)
 
 puts "creando reviews"
 # 4. create a review for that user
@@ -58,6 +58,11 @@ review1 = Review.create!(rating: 5, comment: "Excelente conductor", user_id: use
 review2 = Review.create!(rating: 4, comment: "Buen conductor", user_id: user10.id)
 review3 = Review.create!(rating: 3, comment: "Regular el conductor", user_id: user11.id)
 review4 = Review.create!(rating: 2, comment: "Mal conductor", user_id: user12.id)
+# agregando reviews para demo
+review5 = Review.create!(rating: 4, comment: "Me gustó lo preocupado que fue al esperarnos y ayudarnos", user_id: user1.id)
+review6 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review7 = Review.create!(rating: 4, comment: "Muy amable y con un acento distinto, responsable al volante", user_id: user1.id)
+
 
 
 puts "creando bookings"
@@ -66,4 +71,7 @@ booking1 = Booking.create!(status: "Confirmed", user_id: user2.id, application_i
 booking2 = Booking.create!(status: "Confirmed", user_id: user9.id, application_id: application6.id , car_id: car6.id, review_id: review2.id)
 booking3 = Booking.create!(status: "Confirmed", user_id: user2.id, application_id: application7.id , car_id: car4.id, review_id: review3.id)
 booking4 = Booking.create!(status: "Confirmed", user_id: user9.id, application_id: application8.id , car_id: car6.id, review_id: review4.id)
- 
+# agregando bookings para demo
+booking5 = Booking.create!(status: "Confirmed", user_id: user2.id, application_id: application2.id , car_id: car1.id, review_id: review1.id)
+booking6 = Booking.create!(status: "Confirmed", user_id: user2.id, application_id: application3.id , car_id: car1.id, review_id: review1.id)
+booking7 = Booking.create!(status: "Confirmed", user_id: user2.id, application_id: application4.id , car_id: car1.id, review_id: review1.id)
