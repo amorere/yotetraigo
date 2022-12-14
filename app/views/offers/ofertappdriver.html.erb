@@ -14,7 +14,9 @@
             <h5>Estatus: <%= off.status %></h5>
           </div>
           <div class= "pe-5 ms-auto">
-            <%= button_to "Aceptar Solicitud", car_bookings_path( off.application.car_id, app_id: off.application_id ), class: "btn btn-primary" %>
+            <% if off.status == "Aceptado" %>
+              <%= button_to "Aceptar Solicitud", car_bookings_path( off.application.car_id, app_id: off.application_id ), class: "btn btn-primary" %>
+            <% end %>  
           </div>
       </div>
   <% end %>
