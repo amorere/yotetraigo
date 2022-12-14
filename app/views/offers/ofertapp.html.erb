@@ -5,13 +5,15 @@
     <div>
       </div>
       <div class="card-product-infos">
-        <p>Nombre de usuario: <%= off.application.user.first_name %></p>
-        <p>Reviews: <%= off.application.user.reviews %>
+        <p>Nombre de usuario: <%= off.user.first_name %></p>
+        <p>Reviews: <%= off.user.reviews.average(:rating).round(1) %>
+        <p>Viajes: <%= off.user.reviews.count %>
         <p>Precio: <%= off.price %></p>
         <p>Estatus: <%= off.status %></p>
       </div>
       <div>
         <%= button_to "Aceptar Solicitud",   updateoffer_path( off ), method: :patch, class: "btn btn-gradient" %>
+        <%= link_to "Volver",   misapp_path, class: "btn btn-gradient" %>
         <p></p>
       </div>
     </div>
@@ -19,4 +21,3 @@
 </div>
 <% end %>
 </div>
-

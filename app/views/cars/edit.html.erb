@@ -1,14 +1,16 @@
-<div class='container'>
+<div class='container brandfont mt-3'>
   <h1> Edita la informacion de tu auto </h1>
   <p> Edita el campo que necesites.</p>
-  <%= simple_form_for(@car) do |f| %>
-    <%= f.input :model %>
-    <%= f.input :brand %>
-    <%= f.input :plate %>
-    <%= f.input :color %>
-    <%= f.input :transmission %>
-    <%= f.input :insurance_other_drivers %>
+    <div class="container">
+    <%= simple_form_for(@car) do |f| %>
+      <%= f.input :model %>
+      <%= f.input :brand %>
+      <%= f.input :plate %>
+      <%= f.input :color %>
+      <%= f.input :transmission %>
+      <%= f.input :insurance_other_drivers %>
 
-    <%= f.submit %>
-  <% end %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>

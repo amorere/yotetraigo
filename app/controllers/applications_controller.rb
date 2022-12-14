@@ -4,32 +4,23 @@ class ApplicationsController < ApplicationController
   def index
     if params[:query].present?
       @apps = Application.search_by_country_city_and_comune(params[:query])
-      @apps = @apps.where.not(lat: nil, long: nil, lat2: nil, long2: nil)
-      @markers = @apps.geocoded.map do |app|
-        {
-          lat: app.lat,
-          long: app.long,
-          lat2: app.lat2,
-          long2: app.long2
 
-        }
-      end
     else
       @apps = Application.all
-      @apps = @apps.where.not(lat: nil, long: nil, lat2: nil, long2: nil)
-      @markers = @apps.geocoded.map do |app|
-        {
-          lat: app.lat,
-          long: app.long,
-          lat2: app.lat2,
-          long2: app.long2
-
-        }
-      end
     end
   end
 
   def show
+    @app = Application.find(params[:id])
+    # @apps = @apps.where.not(lat: nil, long: nil, lat2: nil, long2: nil)
+    @markers =
+      [{
+        lat: @app.lat,
+        long: @app.long,
+        lat2: @app.lat2,
+        long2: @app.long2
+
+      }]
   end
 
   def offer
