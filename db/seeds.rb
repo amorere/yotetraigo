@@ -26,6 +26,12 @@ user9 = User.create!(email: "discovertill@lilspam.com", password: "F6TpqhD52", f
 user10 = User.create!(email: "packstretch@sociallymediocre.com", password: "0x8zE11db", first_name: "Paco", last_name: "Stretch", date_of_birth: "1985-02-03", driver_license_expiry: "2025-03-05", phone_number: "193435161", is_driver: true, dni: "876343764", insurance: true, driver_license_dni: "3434321", criminal_record: "No")
 user11 = User.create!(email: "feeldirt@snakebutt.com", password: "Cd45AJw70", first_name: "Fernando", last_name: "Dirt", date_of_birth: "1993-04-08", driver_license_expiry: "2023-05-05", phone_number: "161941010", is_driver: true, dni: "611947764", insurance: true, driver_license_dni: "41695551", criminal_record: "No")
 user12 = User.create!(email: "goessoftly@spamsandwich.com", password: "4xdiCg37C", first_name: "Gonzalo", last_name: "Softly", date_of_birth: "1991-12-12", driver_license_expiry: "2023-12-12", phone_number: "892415161", is_driver: true, dni: "85761764", insurance: true, driver_license_dni: "32224321", criminal_record: "No")
+user13 = User.create!(email: "foughtcloser@thespamfather.com", password: "9eeX9u2G3", first_name: "Fernando", last_name: "Closer", date_of_birth: "1981-10-03", driver_license_expiry: "2023-10-11", phone_number: "191666161", is_driver: false, dni: "87131666", insurance: false, driver_license_dni: "36661321", criminal_record: "No")
+user14 = User.create!(email: "presentspider@thespamfather.com", password: "90j2LTnk7", first_name: "Paco", last_name: "Spider", date_of_birth: "1985-02-03", driver_license_expiry: "2025-03-05", phone_number: "222435161", is_driver: true, dni: "222343764", insurance: true, driver_license_dni: "2224321", criminal_record: "No")
+user15 = User.create!(email: "shinningeasy@thespamfather.com", password: "3pP51t40v", first_name: "Tiffany", last_name: "Easy", date_of_birth: "1993-04-08", driver_license_expiry: "2023-06-05", phone_number: "111141010", is_driver: true, dni: "611000764", insurance: true, driver_license_dni: "41695111", criminal_record: "No")
+user16 = User.create!(email: "materialmight@itsjiff.com", password: "w3C689CMX", first_name: "Matias", last_name: "Might", date_of_birth: "1991-08-08", driver_license_expiry: "2023-08-08", phone_number: "892415999", is_driver: false, dni: "85761999", insurance: true, driver_license_dni: "32999321", criminal_record: "No")
+
+
 
 
 puts "creando autos"
@@ -60,3 +66,4 @@ booking1 = Booking.create!(status: "Confirmed", user_id: user2.id, application_i
 booking2 = Booking.create!(status: "Confirmed", user_id: user9.id, application_id: application6.id , car_id: car6.id, review_id: review2.id)
 booking3 = Booking.create!(status: "Confirmed", user_id: user2.id, application_id: application7.id , car_id: car4.id, review_id: review3.id)
 booking4 = Booking.create!(status: "Confirmed", user_id: user9.id, application_id: application8.id , car_id: car6.id, review_id: review4.id)
+ 
