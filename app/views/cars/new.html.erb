@@ -5,11 +5,12 @@
     <p> Para empezar, registra tu vehiculo </p>
     <div class="formulario mb-5">
       <%= simple_form_for(@car) do |f| %>
-        <%= f.input :model, placeholder: "model", label: false%>
-        <%= f.input :brand, placeholder: "brand", label: false%>
-        <%= f.input :plate, placeholder: "plate", label: false%>
-        <%= f.input :color, placeholder: "color", label: false%>
-        <%= f.input :transmission, placeholder: "transmission", label: false%>
+        <%= f.input :model, placeholder: "Modelo", label: false%>
+        <%= f.input :brand, placeholder: "Marca", label: false%>
+        <%= f.input :plate, placeholder: "Patente", label: false%>
+        <%= f.input :color, placeholder: "Color", label: false%>
+        <%= f.input :transmission, placeholder: "transmisión", label: false%>
+        <%= f.input :photo, as: :file %>
         <%= f.input :insurance_other_drivers %>
         <%= f.submit class: "btn btn-primary form-control"%>
       <% end %>

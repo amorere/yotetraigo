@@ -4,13 +4,17 @@
       <h1> Mis autos:</h1>
       <h5> Elegi un auto, para realizar tu viaje.</h5>
     </div>
-    <div class="row d-flex justify-content-center mb-5">
       <% @misautos.each do |car| %>
+    <div class="row d-flex justify-content-center mb-5">
       <div class="card-product cards">
         <div class="col-4">
           <div>
             <div>
-              <%= image_tag "Traffic.webp", height: 150 %>
+              <% if car.photo.attached? %>
+                <%= image_tag car.photo, height: 150 %>
+              <% else %>
+                <%= image_tag "Traffic.webp", height: 150 %>
+              <% end %>
             </div>
           </div>
         </div>
