@@ -1,7 +1,7 @@
 
-<div class="container">
-  <% if @misautos.size > 0 %>
-    <div class="brandfont text-center mt-3 mb-3">
+ <% if @misautos.size > 0 %>
+  <div class="container d-flex flex-column align-items-center mt-3">
+    <div class= "brandfont align-center mt-3">
       <h1> Mis autos:</h1>
       <h5> Elegi un auto, para realizar tu viaje.</h5>
     </div>
@@ -35,10 +35,7 @@
         </div>
       </div>
     </div>
-    <% end %>
-  <% else %>
-    <h1>¡Primero sube tu auto!</h1>
-    <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary" %>
-  <% end %>
-</div>
+ <% else %>
+  <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary form-control" %>
+<% end %>
 
