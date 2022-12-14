@@ -14,7 +14,9 @@
             </div>
            <div class="d-flex justify-content-end w-100 align-items mb-4 h-100 align-items-end">
             <div class="me-4">
+            <% if app.confirmation_status != "Cerrado" %>
               <%= link_to "Editar",   edit_application_path(app), class: "btn btn-primary" %>
+            <% end %>
             </div>
 
              <div class="me-4">
@@ -23,8 +25,10 @@
              <% if app.confirmation_status == "Contraoferta" %>
                 <%= button_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-gradient" %>
              <% end %>
-             <% if app.offers.size > 0 %>
-                <%= link_to "Ver ofertas", ofertapp_path( app ), class: "btn btn-gradient" %>
+             <% if app.confirmation_status != "Cerrado" %>
+              <% if app.offers.size > 0 %>
+                  <%= link_to "Ver ofertas", ofertapp_path( app ), class: "btn btn-gradient" %>
+              <% end %>
              <% end %>
            </div>
        </div>
