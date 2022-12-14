@@ -11,7 +11,7 @@ class OffersController < ApplicationController
     @offer.status = "Pendiente"
     @offer.user_id = current_user.id
     if @offer.save
-      redirect_to  root_path
+      redirect_to  ofertappdriver_path
     else
       render :new, status: :unprocessable_entity
     end
