@@ -1,42 +1,41 @@
-
  <% if @misautos.size > 0 %>
   <div class="container d-flex flex-column align-items-center mt-3">
     <div class= "brandfont align-center mt-3">
       <h1> Mis autos:</h1>
       <h5> Elegi un auto, para realizar tu viaje.</h5>
     </div>
-      <% @misautos.each do |car| %>
-        <div class="row d-flex justify-content-center mb-5">
-          <div class="card-product cards">
-            <div class="col-4">
+    <% @misautos.each do |car| %>
+      <div class="row d-flex justify-content-center mb-5">
+        <div class="card-product cards">
+          <div class="col-4">
+            <div>
               <div>
-                <div>
-                  <% if car.photo.attached? %>
-                    <%= image_tag car.photo, height: 150 %>
-                  <% else %>
-                    <%= image_tag "Traffic.webp", height: 150 %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="ms-5">
-                <h6>Model: <%= car.model %></h6>
-                <h6>Brand: <%= car.brand %>
-                <h6>Color: <%= car.color %></h6>
-                <h6>Transmission: <%= car.transmission %></h6>
-                <h6>Seguro para terceros: <%= car.insurance_other_drivers %></h6>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="text-center">
-                <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-primary" %>
+                <% if car.photo.attached? %>
+                  <%= image_tag car.photo, height: 150 %>
+                <% else %>
+                  <%= image_tag "Traffic.webp", height: 150 %>
+                <% end %>
               </div>
             </div>
           </div>
+          <div class="col-4">
+            <div class="ms-5">
+              <h6>Model: <%= car.model %></h6>
+              <h6>Brand: <%= car.brand %>
+              <h6>Color: <%= car.color %></h6>
+              <h6>Transmission: <%= car.transmission %></h6>
+              <h6>Seguro para terceros: <%= car.insurance_other_drivers %></h6>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <%= link_to "Seleccionar",   new_car_application_path(car), class: "btn btn-primary" %>
+            </div>
+          </div>
         </div>
-      <% end %>
- <% else %>
-  <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary form-control" %>
-<% end %>
+      </div>
+    <% end %>
+<% else %>
+    <%= link_to "Subir mi auto", new_car_path, class: "btn btn-primary form-control" %>
 
+<% end %>

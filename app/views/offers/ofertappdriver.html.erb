@@ -1,20 +1,21 @@
-<div class="container">
-<% @offers.each do |off| %>
-   <div class= 'container'>
-  <div class="card-product my-4">
-    <div>
-      </div>
-      <div class="card-product-infos">
-        <p>Nombre de usuario: <%= off.application.user.first_name %></p>
-        <p>Precio: <%= off.price %></p>
-        <p>Estatus: <%= off.status %></p>
-      </div>
-      <div>
-        <%= button_to "Aceptar Solicitud", car_bookings_path( off.application.car_id, app_id: off.application_id ), class: "btn btn-gradient" %>
-        <p></p>
-      </div>
-    </div>
+<div class="container mt-3">
+  <div class="brandfont mb-4">
+    <h1>Mis ofertas de viaje:</h1>
   </div>
-</div>
-<% end %>
+  <% @offers.each do |off| %>
+      <div class="card-product my-4 justify-content-start">
+          <div class="card-product-infos text-left ps-5">
+            <h5>Nombre de usuario: <%= off.application.user.first_name %></h5>
+            <% if off.application.country == "Chile" %>
+              <h5>Precio: <%= off.price %> CLP </h5>
+            <% else %>
+              <h5>Precio: <%= off.price %> USD </h5>
+            <% end %>
+            <h5>Estatus: <%= off.status %></h5>
+          </div>
+          <div class= "pe-5 ms-auto">
+            <%= button_to "Aceptar Solicitud", car_bookings_path( off.application.car_id, app_id: off.application_id ), class: "btn btn-primary" %>
+          </div>
+      </div>
+  <% end %>
 </div>

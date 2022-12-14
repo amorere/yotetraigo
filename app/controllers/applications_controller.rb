@@ -63,7 +63,7 @@ class ApplicationsController < ApplicationController
   end
 
   def destroy
-    @app.destroy
+    @app.destroy if @app.confirmation_status == "Abierto"
     redirect_to misapp_path, status: :see_other
   end
 

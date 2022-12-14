@@ -29,7 +29,11 @@ class BookingsController < ApplicationController
     @booking.car_id = @car.id
     @booking.status = "Pendiente"
     @booking.application_id = params[:app_id]
+    # @app = Application.find(params[:app_id])
+    # @app.confirmation_status = "Cerrado"
+    # @app.save
     if @booking.save
+      @booking.close_app!
       redirect_to misbook_path
     else
       render :new, status: :unprocessable_entity
