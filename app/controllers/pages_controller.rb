@@ -3,4 +3,8 @@ class PagesController < ApplicationController
   def home
     @cars = Car.all
   end
+
+  def cancel_policy
+    
+  end
 end
