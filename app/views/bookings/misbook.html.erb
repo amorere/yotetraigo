@@ -12,10 +12,14 @@
             <h5>Status: <%= book.status %></h5>
           </div>
           <div class= "pe-5 ms-auto">
-            <%= link_to "Pagar", medios_de_pago_path, class: "text-reset btn btn-primary" %>
+            <% if current_user.is_driver == false %>
+              <% if book.status == "Pendiente" %>
+                <%= link_to "Pagar", medio_de_pago_path(book), class: "text-reset btn btn-primary" %>
+              <% end %>
+            <% end %>  
             <%= button_to "Eliminar", book, method: :delete, class: "btn btn-primary" %>
             <p></p>
-            <% if book.status == "Pendiente" %>
+            <% if book.status == "Pagado" %>
               <%= button_to "Completar mi viaje",  updatecomplete_path(book), method: :patch,  class: "btn btn-primary"  %>
             <% end %>
             <% if book.status == "Completado" %>
