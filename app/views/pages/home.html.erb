@@ -7,9 +7,9 @@
               <p>Donde quieras y cuando quieras, tene un Buddy a tu alcance.</p>
               <% if user_signed_in? %>
               <% if current_user.is_driver %>
-                <%= link_to "Quiero realizar un viaje", applications_path, class: "btn btn-primary" %>
+                <%= link_to "Quiero realizar un viaje", applications_path, class: "btn btn-primary rounded-pill" %>
                 <% else %>
-                <%= link_to "Solicitar un viaje", miautodeviaje_path, class: "btn btn-primary" %>
+                <%= link_to "Solicitar un viaje", miautodeviaje_path, class: "btn btn-primary rounded-pill" %>
                 <% end %>
               <% else %>
                 <%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary rounded-pill" %>
