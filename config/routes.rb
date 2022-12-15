@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get '/medio_de_pago', to: 'misbook#medio_de_pago'
+  get '/:booking_id/medio_de_pago', to: 'bookings#medio_de_pago', as: :medio_de_pago
   get '/condiciones', to: 'pages#condiciones'
   get '/help', to: 'pages#help'
   get '/cancel_policy', to: 'pages#cancel_policy'
@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get '/offertappdriver', to: 'offers#ofertappdriver', as: :ofertappdriver
   patch '/offers/:id', to: 'offers#update', as: :updateoffer
   patch '/bookings/:id', to: 'bookings#update', as: :updatecomplete
-
+  patch '/bookings/pagado/:id', to: 'bookings#pagado', as: :pagadocomplete
+  patch '/bookings/cerrado/:id', to: 'bookings#cerrado', as: :cerradocomplete
   resources :cars do
     resources :bookings, only: %i[new create]
     resources :applications, only: %i[new create]
