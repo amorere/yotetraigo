@@ -1,9 +1,13 @@
-<div class='container'>
-  <h1>Enviale tu oferta al usuarui</h1>
-  <p> Elige un precio por el cual estarias dispuesto a realizar el trabajo</p>
-  <%= simple_form_for [@application, @offer] do |f| %>
-    <%= f.input :price %>
+<div class='container d-flex flex-column align-items-center'>
+  <div class= "brandfont mt-5">
+    <h1>Enviale tu oferta al usuario</h1>
+  </div>
+    <p> Elige un precio por el cual estarias dispuesto a realizar el trabajo</p>
+    <div class="formulario mb-5">
+      <%= simple_form_for [@application, @offer] do |f| %>
+        <%= f.input :price %>
 
-    <%= f.submit %>
-  <% end %>
+        <%= f.submit %>
+      <% end %>
+    </div>
 </div>
