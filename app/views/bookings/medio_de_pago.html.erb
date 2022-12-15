@@ -1,0 +1,14 @@
+<div class='container brandfont mt-3'>
+  <h1> Tarjeta de credito o debito</h1>
+    <div class="container">
+    <%= simple_form_for(@car) do |f| %>
+      <%= f.input :Numero_de_tarjeta placeholder: "N° de tarjeta" %>
+      <%= f.input :Fecha_de_caducidad placeholder: "dd/mm/aaaa" %>
+      <%= f.input :Codigo_de_seguridad placeholder: "***" %>
+      <%= f.input :Nombre_del_titular placeholder: "Nombre y Apellido"%>
+      <%= f.input :Documento placeholder: "Escribe tu dni" %>
+      <%= f.input :brand placeholder: "Escribe tu dni" %>
+      <%= f.button :submit, "Pagar", class: "Btn btn-primary col-12"
+    <% end %>
+  </div>
+</div>

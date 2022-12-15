@@ -12,6 +12,7 @@
             <h5>Status: <%= book.status %></h5>
           </div>
           <div class= "pe-5 ms-auto">
+            <%= link_to "Pagar", medios_de_pago_path, class: "text-reset btn btn-primary" %>
             <%= button_to "Eliminar", book, method: :delete, class: "btn btn-primary" %>
             <p></p>
             <% if book.status == "Pendiente" %>
@@ -24,3 +25,4 @@
       </div>
   <% end %>
 </div>
+

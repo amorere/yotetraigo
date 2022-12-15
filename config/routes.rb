@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get '/cancel_policy', to: 'pages#cancel_policy'
+  get '/medio_de_pago', to: 'misbook#medio_de_pago'
   get '/condiciones', to: 'pages#condiciones'
   get '/help', to: 'pages#help'
   # Defines the root path route ("/")
