@@ -4,38 +4,36 @@
     </div>
     <div class="formulario mt-3 mb-5">
       <div class="container mt-3" data-controller="display-driver-fields">
-        <form data-turbo="false" class="simple_form new_user" id="new_user" novalidate="novalidate" enctype="multipart/form-data" action="/users" accept-charset="UTF-8" method="post">
-          <input type="hidden" name="authenticity_token" value="3HfjvhcN4nWpYZ-yDib3B_4WPR-ljn2EwaRzP7MXUxhcqgSunvlOM65oQeNTXXcISY8Dfh6Yf7AShIi_4d7mTQ" autocomplete="off">
           <div class="form-inputs">
-            <div class="mb-3 email required user_email">
-              <input class="form-control string email required" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="Numero de tarjeta" type="email" value="" name="user[email]" id="user_email">
+            <div class="mb-3 string optional user_first_name">
+              <input class="form-control string optional"  placeholder="Numero de tarjeta" >
             </div>
             <div class="row">
               <div class="col">
                 <div class="mb-3 string optional user_first_name">
-                  <input class="form-control string optional" placeholder="Nombre del titular de la tarjeta" type="text" name="user[first_name]" id="user_first_name">
+                  <input class="form-control string optional" placeholder="Nombre del titular de la tarjeta" >
                 </div>
               </div>
             </div>
             <div class="row md-12">
               <div class="col col-md-6">
                 <div class="mb-3 string optional user_dni">
-                  <input class="form-control string optional" placeholder="Fecha de caducidad" type="text" name="user[dni]" id="user_dni">
+                  <input class="form-control string optional" placeholder="Fecha de caducidad" >
                 </div>
               </div>
               <div class="col md-6">
                 <div class="mb-3 tel optional user_phone_number">
-                  <input class="form-control string tel optional" placeholder="Codigo de seguridad" type="tel" name="user[phone_number]" id="user_phone_number">
+                  <input class="form-control string tel optional" placeholder="Codigo de seguridad" >
                 </div>
               </div>
               <div class="mb-3 string optional user_first_name">
-                <input class="form-control string optional" placeholder="DNI del titular de la tarjeta" type="text" name="user[first_name]" id="user_first_name">
+                <input class="form-control string optional" placeholder="DNI del titular de la tarjeta" >
               </div>
             </div>
             <div class="form-inputs">
               <div class="row">
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary form-control rounded-pill">Pagar</button>
+                   <%= button_to "Pagar", pagadocomplete_path(@booking), method: :patch, class: "btn Btn btn-primary col-12"  %>
                 </div>
               </div>
             </div>
