@@ -18,17 +18,17 @@
       </div>
       <div class= "pe-5 ms-auto">
           <% if app.confirmation_status != "Cerrado" %>
-            <%= link_to "Editar",   edit_application_path(app), class: "btn btn-primary" %>
+            <%= link_to "Editar",   edit_application_path(app), class: "btn btn-primary rounded-pill" %>
           <% end %>
           <% unless app.confirmation_status == "Cerrado" %>
-            <%= link_to "Eliminar", application_path(app), data: {turbo_method: :delete, turbo_confirm: "Estas seguro?"}, class: "btn btn-primary" %>
+            <%= link_to "Eliminar", application_path(app), data: {turbo_method: :delete, turbo_confirm: "Estas seguro?"}, class: "btn btn-primary rounded-pill" %>
           <% end %>
           <% if app.confirmation_status == "Contraoferta" %>
-            <%= link_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-primary" %>
+            <%= link_to "Aceptar Solicitud", car_bookings_path( app.car_id, app_id: app.id ), class: "btn btn-primary rounded-pill" %>
           <% end %>
           <% if app.confirmation_status != "Cerrado" %>
             <% if app.offers.size > 0 %>
-              <%= link_to "Ver ofertas", ofertapp_path( app ), class: "btn btn-primary" %>
+              <%= link_to "Ver ofertas", ofertapp_path( app ), class: "btn btn-primary rounded-pill" %>
             <% end %>
           <% end %>
       </div>

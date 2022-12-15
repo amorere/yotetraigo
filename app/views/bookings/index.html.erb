@@ -5,13 +5,13 @@
 
         <div class="card-product-infos text-left ps-5">
           <p>Auto: <%= book.car_id. %></p>
-          <p>Drop point: <%= book.drop_point %>
+          <p>Punto de recogida: <%= book.drop_point %>
           <p>Dia y hora de recogida: <%= book.pickup_datetime %></p>
           <p>Precio: <%= book.price %></p>
         </div>
         <div class= "pe-5 ms-auto">
-          <%= link_to "Aceptar", car_bookings_path( book.car_id, app_id: book.id ), class: "btn btn-primary", data: { turbo_method: "post" } %>
-          <%= link_to "Negociar", offer_path(book), class: "btn btn-primary" %>
+          <%= link_to "Aceptar", car_bookings_path( book.car_id, app_id: book.id ), class: "btn btn-primary rounded-pill", data: { turbo_method: "post" } %>
+          <%= link_to "Negociar", offer_path(book), class: "btn btn-primary rounded-pill" %>
         </div>
     </div>
   <% end %>
