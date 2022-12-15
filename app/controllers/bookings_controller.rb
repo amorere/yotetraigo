@@ -49,12 +49,29 @@ class BookingsController < ApplicationController
     @booking.status = "Completado"
     @booking.save
     redirect_to misbook_path
-
   end
 
   def destroy
     @booking.destroy
     redirect_to booking_path, status: :see_other
+  end
+
+  def medio_de_pago
+    @booking = Booking.find(params[:booking_id])
+  end
+
+  def pagado
+    @booking = Booking.find(params[:id])
+    @booking.status = "Pagado"
+    @booking.save
+    redirect_to misbook_path
+  end
+
+  def cerrado
+    @booking = Booking.find(params[:id])
+    @booking.status = "Cerrado"
+    @booking.save
+    redirect_to misbook_path
   end
 
   private

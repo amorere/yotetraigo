@@ -62,6 +62,15 @@ review4 = Review.create!(rating: 2, comment: "Mal conductor", user_id: user12.id
 review5 = Review.create!(rating: 4, comment: "Me gustó lo preocupado que fue al esperarnos y ayudarnos", user_id: user1.id)
 review6 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
 review7 = Review.create!(rating: 4, comment: "Muy amable y con un acento distinto, responsable al volante", user_id: user1.id)
+review8 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review9 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review10 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review11 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review12 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review13 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review14 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review15 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
+review16 = Review.create!(rating: 5, comment: "Excelente conductor, nos salvó de una encerrona debido a sus habilidades al volante", user_id: user1.id)
 
 
 
