@@ -1,18 +1,20 @@
 
      <div class="banner d-flex align-items-end">
-        <div class="container pb-5">
-          <h1>Good Buddy</h1>
-          <h2><strong>Volve seguro</strong> nosotros <strong>manejamos.</strong></h2>
-          <p>Donde quieras y cuando quieras, tene un Buddy a tu alcance.</p>
-          <% if user_signed_in? %>
-            <% if current_user.is_driver %>
-              <%= link_to "Quiero realizar un viaje", applications_path, class: "btn btn-primary" %>
+        <div class="container pb-5 d-flex" style= "height: 700px">
+          <div class="mt-auto">
+              <h1>Good Buddy</h1>
+              <h2><strong>Volve seguro</strong> nosotros <strong>manejamos.</strong></h2>
+              <p>Donde quieras y cuando quieras, tene un Buddy a tu alcance.</p>
+              <% if user_signed_in? %>
+              <% if current_user.is_driver %>
+                <%= link_to "Quiero realizar un viaje", applications_path, class: "btn btn-primary" %>
+                <% else %>
+                <%= link_to "Solicitar un viaje", miautodeviaje_path, class: "btn btn-primary" %>
+                <% end %>
               <% else %>
-              <%= link_to "Solicitar un viaje", miautodeviaje_path, class: "btn btn-primary" %>
+                <%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary rounded-pill" %>
               <% end %>
-            <% else %>
-              <%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary rounded-pill btn-lg" %>
-          <% end %>
+          </div>
         </div>
       </div>
   <div class="container mt-5">
@@ -28,13 +30,12 @@
                             <%= image_tag "Traffic.webp", class: "imagenhome"%>
                           </div>
                        </div>
-                           <div class="col-md-6 text-column" style="margin: auto 0;">
-                              <div class="text-block">
-
- <h2 class="lang align-left">Claridad y transparencia en las tarifas</h2>
-                                      <p class="align-left">Siempre te mostramos el precio sugerido antes de aceptar el viaje para que puedas hacer tus viajes, sin sorpresas.</p>
-                              </div>
-                           </div>
+                        <div class="col-md-6 text-column" style="margin: auto 0;">
+                          <div class="text-block">
+                            <h2 class="lang align-left">Claridad y transparencia en las tarifas</h2>
+                            <p class="align-left">Siempre te mostramos el precio sugerido antes de aceptar el viaje para que puedas hacer tus viajes, sin sorpresas.</p>
+                          </div>
+                        </div>
                      </div>
                  </div>
                     <div class="split-item" style=" ">
