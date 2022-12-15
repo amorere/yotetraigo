@@ -1,54 +1,44 @@
-<div class="formulario mb-5">
-      <div class="container" data-controller="display-driver-fields">
-        <form data-turbo="false" class="simple_form new_user" id="new_user" novalidate="novalidate" enctype="multipart/form-data" action="/users" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="3HfjvhcN4nWpYZ-yDib3B_4WPR-ljn2EwaRzP7MXUxhcqgSunvlOM65oQeNTXXcISY8Dfh6Yf7AShIi_4d7mTQ" autocomplete="off">
-          
+ <div class="container mt-3 d-flex flex-column align-items-center">
+    <div class="brandfont mt-3">
+      <h1> Agrega tu tarjeta </h1>
+    </div>
+    <div class="formulario mt-3 mb-5">
+      <div class="container mt-3" data-controller="display-driver-fields">
           <div class="form-inputs">
-                <div class="mb-3 email required user_email"><input class="form-control string email required" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="Escribe tu correo" type="email" value="" name="user[email]" id="user_email"></div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="mb-3 string optional user_first_name"><input class="form-control string optional" placeholder="Escribe tu nombre" type="text" name="user[first_name]" id="user_first_name"></div>
+            <div class="mb-3 string optional user_first_name">
+              <input class="form-control string optional"  placeholder="Numero de tarjeta" >
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3 string optional user_first_name">
+                  <input class="form-control string optional" placeholder="Nombre del titular de la tarjeta" >
+                </div>
+              </div>
             </div>
             <div class="row md-12">
-              <div class="col md-6">
-                <div class="mb-3 string optional user_dni"><input class="form-control string optional" placeholder="Escribe tu Dni" type="text" name="user[dni]" id="user_dni"></div>
+              <div class="col col-md-6">
+                <div class="mb-3 string optional user_dni">
+                  <input class="form-control string optional" placeholder="Fecha de caducidad" >
+                </div>
               </div>
               <div class="col md-6">
-                <div class="mb-3 tel optional user_phone_number"><input class="form-control string tel optional" placeholder="Escribe tu numero de telefono" type="tel" name="user[phone_number]" id="user_phone_number"></div>
+                <div class="mb-3 tel optional user_phone_number">
+                  <input class="form-control string tel optional" placeholder="Codigo de seguridad" >
+                </div>
+              </div>
+              <div class="mb-3 string optional user_first_name">
+                <input class="form-control string optional" placeholder="DNI del titular de la tarjeta" >
               </div>
             </div>
-            <div class="mb-3 date optional user_date_of_birth"><label class="form-label date optional" for="user_date_of_birth">Date of birth</label><div class="d-flex flex-row justify-content-between align-items-center"><input class="form-select mx-1 date optional" type="date" name="user[date_of_birth]" id="user_date_of_birth"></div></div>
-            <fieldset class="mb-3 boolean optional user_is_driver"><div class="form-check"><input name="user[is_driver]" type="hidden" value="0" autocomplete="off"><input class="form-check-input boolean optional" data-action="change->display-driver-fields#toggleDisplay" type="checkbox" value="1" name="user[is_driver]" id="user_is_driver"><label class="form-check-label boolean optional" for="user_is_driver">Is driver</label></div></fieldset>
-            <div class="d-none" data-display-driver-fields-target="driver">
-            <div class="row">
-              <div class="col">
-                <div class="mb-3 string optional user_driver_license_dni"><label class="form-label string optional" for="user_driver_license_dni">Driver license dni</label><input class="form-control string optional" type="text" name="user[driver_license_dni]" id="user_driver_license_dni"></div>
+            <div class="form-inputs">
+              <div class="row">
+                <div class="col-12">
+                   <%= button_to "Pagar", pagadocomplete_path(@booking), method: :patch, class: "btn Btn btn-primary col-12"  %>
+                </div>
               </div>
-              <div class="col">
-                <div class="mb-3 date optional user_driver_license_expiry"><label class="form-label date optional" for="user_driver_license_expiry">Driver license expiry</label><div class="d-flex flex-row justify-content-between align-items-center"><input class="form-select mx-1 date optional" type="date" name="user[driver_license_expiry]" id="user_driver_license_expiry"></div></div>
-              </div>
-            </div>
-            <fieldset class="mb-3 boolean optional user_insurance"><div class="form-check"><input name="user[insurance]" type="hidden" value="0" autocomplete="off"><input class="form-check-input boolean optional" type="checkbox" value="1" name="user[insurance]" id="user_insurance"><label class="form-check-label boolean optional" for="user_insurance">Insurance</label></div></fieldset>
-            <div class="mb-3 string optional user_criminal_record"><label class="form-label string optional" for="user_criminal_record">Criminal record</label><input class="form-control string optional" type="text" name="user[criminal_record]" id="user_criminal_record"></div>
-          </div>
-            </div>
-          <div class="form-inputs">
-            <div class="row">
-              <div class="col">
-                <div class="mb-3 password required user_password"><label class="form-label password required" for="user_password">Password <abbr title="required">*</abbr></label><input class="form-control password required" autocomplete="new-password" required="required" aria-required="true" type="password" name="user[password]" id="user_password"><div class="form-text">6 characters minimum</div></div>
-              </div>
-              <div class="col">
-                <div class="mb-3 password required user_password_confirmation"><label class="form-label password required" for="user_password_confirmation">Password confirmation <abbr title="required">*</abbr></label><input class="form-control password required" autocomplete="new-password" required="required" aria-required="true" type="password" name="user[password_confirmation]" id="user_password_confirmation"></div>
-              </div>
-                <div class="mb-3 file optional user_photo"><label class="form-label file optional" for="user_photo">Photo</label><input class="form-control file optional" type="file" name="user[photo]" id="user_photo"></div>
             </div>
           </div>
-</form>
-
-  <%= button_to "Pagar", pagadocomplete_path(@booking), method: :patch, class: "btn Btn btn-primary col-12"  %>
-
-
-
-
+        </form>
       </div>
     </div>
+  </div>

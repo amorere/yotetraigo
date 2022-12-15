@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
       current_user.cars.each do |car|
         @misbook << car.bookings
       end
-      @misbook = @misbook[0]
+      @misbook = @misbook.flatten
     end
   end
 

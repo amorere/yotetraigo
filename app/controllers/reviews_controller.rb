@@ -17,6 +17,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @booking = Booking.find(params[:booking_id])
+    @booking.status = "Finalizado"
+    @booking.save
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review.save
