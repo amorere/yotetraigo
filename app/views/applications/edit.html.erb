@@ -1,12 +1,16 @@
-<div class='container'>
-  <h1>Edita tu solicitud</h1>
-  <p>Completa el siguiente formulario.</p>
-  <%= simple_form_for [@car, @app] do |f| %>
-    <%= f.input :price %>
-    <%= f.input :pickup_point %>
-    <%= f.input :drop_point %>
-    <%= f.input :pickup_datetime %>
+<div class='container d-flex flex-column align-items-center'>
+  <div class= "brandfont mt-5">
+    <h1>Edita tu solicitud</h1>
+  </div>
+    <p>Completa el siguiente formulario.</p>
+    <div class="formulario mb-5">
+      <%= simple_form_for [@car, @app] do |f| %>
+        <%= f.input :price %>
+        <%= f.input :pickup_point %>
+        <%= f.input :drop_point %>
+        <%= f.input :pickup_datetime %>
 
-    <%= f.submit %>
-  <% end %>
+        <%= f.submit %>
+      <% end %>
+    </div>
 </div>
