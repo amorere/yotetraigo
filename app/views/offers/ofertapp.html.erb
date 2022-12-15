@@ -3,7 +3,7 @@
     <div class="card-product my-4 justify-content-start">
         <div class="card-product-infos text-left ps-5">
           <h5>Nombre de usuario: <%= off.user.first_name %></h5>
-          <h5>Reviews: <%= off.user.reviews.average(:rating).round(1) %>
+          <h5>Reviews: <%= off.user.reviews.empty? ? 0 : off.user.reviews.average(:rating).round(1) %>
           <h5>Viajes: <%= off.user.reviews.count %>
           <h5>Precio: <%= off.price %></h5>
           <h5>Estatus: <%= off.status %></h5>
