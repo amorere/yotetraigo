@@ -14,9 +14,9 @@
           <div class= "pe-5 ms-auto">
             <% if current_user.is_driver == false %>
               <% if book.status == "Pendiente" %>
-                <%= link_to "Pagar", medio_de_pago_path(book), class: "text-reset btn btn-primary" %>
+                <%= link_to "Pagar", medio_de_pago_path(book), class: "btn btn-primary" %>
               <% end %>
-            <% end %>  
+            <% end %>
             <%= button_to "Eliminar", book, method: :delete, class: "btn btn-primary" %>
             <p></p>
             <% if book.status == "Pagado" %>
@@ -29,4 +29,3 @@
       </div>
   <% end %>
 </div>
-
