@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/medio_de_pago', to: 'misbook#medio_de_pago'
   get '/condiciones', to: 'pages#condiciones'
   get '/help', to: 'pages#help'
+  get '/cancel_policy', to: 'pages#cancel_policy'
   # Defines the root path route ("/")
   # root "articles#index"
   get '/misautos', to: 'cars#misautos'
