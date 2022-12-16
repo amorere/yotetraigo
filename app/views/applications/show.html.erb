@@ -7,8 +7,8 @@
   </div>
           <div class= "text-center mt-4">
 
-          <%= link_to "Aceptar viaje", car_bookings_path( @app.car_id, app_id: @app.id ), class: "btn btn-primary", data: { turbo_method: "post" } %>
-          <%= link_to "Negociar precio", new_application_offer_path(@app), class: "btn btn-primary" %>
+          <%= link_to "Aceptar viaje", car_bookings_path( @app.car_id, app_id: @app.id ), class: "btn btn-primary rounded-pill", data: { turbo_method: "post" } %>
+          <%= link_to "Negociar precio", new_application_offer_path(@app), class: "btn btn-primary rounded-pill" %>
 
         </div>
 </div>
